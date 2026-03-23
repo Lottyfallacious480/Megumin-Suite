@@ -6,11 +6,12 @@
 
 **Hello. Kazuma here.**
 
-So, you know how every single time you open a new RP in SillyTavern, you spend like 20 minutes fiddling with your system prompt, rewriting your jailbreak, tweaking your writing style, and then the AI *still* calls your female character "he" for the 47th time? Yeah. I got so unbelievably tired of that I built an entire extension to never deal with it again.
+So, you know how every single time you switch between RPs in SillyTavern, you spend like 10 minutes fiddling with your system prompt, toggles. just to download new card and start the process again.
+And let's be real General presets are so limited telling the ai a tag or a genre is not the same as building a full prompt Specifically for that RP. I got so unbelievably tired of that I built an entire extension to never deal with it again.
 
 Introducing **Megumin Suite** — the first SillyTavern preset that basically configures itself. You open a chat, click a button, pick some stuff from a pretty menu, and the Suite does the rest. Every character gets their own saved profile. Switch between your gritty dark fantasy campaign and your cozy slice-of-life RP? Boom. Already configured. Both of them. Separately. Without you touching a single prompt.
 
-Your time should go into the story, not into menu hell. I did the boring nerd stuff so you don't have to. You're welcome btw.
+Your time should go into the Story, not into menu hell. I did the boring nerd stuff so you don't have to. You're welcome btw.
 
 ---
 
