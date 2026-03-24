@@ -575,22 +575,36 @@ async function useMeguminEngine(task) {
     const selector = $("#settings_preset_openai");
     const option = selector.find(`option`).filter(function() { return $(this).text().trim() === TARGET_PRESET_NAME; });
     let originalValue = null;
+    
     if (option.length) {
-        originalValue = selector.val(); selector.val(option.val()).trigger("change");
-        await new Promise(r => setTimeout(r, 1000));
-    } else { toastr.error(`"${TARGET_PRESET_NAME}" not found in OpenAI presets.`); return; }
-    try { await task(); } catch (e) { console.error(`[${extensionName}] AI Error:`, e); }
-    finally { selector.val(originalValue).trigger("change"); }
+        originalValue = selector.val(); 
+        selector.val(option.val()).trigger("change");
+        
+        // Increased delay to 2000ms. Third-party APIs like GLM/NanoGPT need a little 
+        // more time to fully reconnect when the preset changes before we fire the prompt.
+        await new Promise(r => setTimeout(r, 2000));
+    } else { 
+        toastr.error(`"${TARGET_PRESET_NAME}" not found in OpenAI presets.`); 
+        return; 
+    }
+    
+    try { 
+        await task(); 
+    } catch (e) { 
+        console.error(`[${extensionName}] AI Error:`, e); 
+    } finally { 
+        // Small safety buffer before switching back so ST doesn't abort the tail end of the generation
+        await new Promise(r => setTimeout(r, 500));
+        selector.val(originalValue).trigger("change"); 
+    }
 }
 
-// NEW CORE GENERATOR: Triggers an empty prompt so ST processes the preset,
-// while we physically inject the true task into [[order]] in the pipeline hook.
 async function runMeguminTask(orderText) {
     activeGenerationOrder = orderText;
     try {
-        // Send a dummy marker. The hook will delete this dummy marker
-        // and inject `activeGenerationOrder` into the [[order]] block.
-        return await generateQuietPrompt("___PS_DUMMY___");
+        // Passing it as an object { prompt: ... } fixes the ST 1.15 yellow warning 
+        // and stops the promise from desyncing and aborting early!
+        return await generateQuietPrompt({ prompt: "___PS_DUMMY___" });
     } finally {
         activeGenerationOrder = null;
     }
