@@ -37,7 +37,7 @@
             "forbid_overrides": false
         },
         {
-            "name": "Auxiliary Prompt",
+            "name": "</history>",
             "system_prompt": true,
             "role": "system",
             "content": "</history>\nCRITICAL DIRECTIVE: This is your memory. Use it for factual\ncontinuity only. Do not adopt its writing style, pacing, or tone.\nYour voice is defined by this prompt alone.\n\nBegin your response now.",
@@ -55,10 +55,10 @@
             "marker": true
         },
         {
-            "name": "Post-History Instructions",
+            "name": "Output format",
             "system_prompt": true,
             "role": "system",
-            "content": "<thinking_steps>\nBefore creating the response, think deeply.\n\nThoughts must be wrapped in <ksc></ksc>. The first token must be <ksc>. The main story text must immediately follow </ksc>.\n\n<ksc>\n1. WHAT ACTUALLY HAPPENED:\nStrip the user's input down to observable actions and spoken words\nonly. Discard any stated thoughts or feelings no NPC could perceive.\n\n2. EMOTIONAL LANDSCAPE:\nWhat is each relevant NPC feeling on the surface? What are they\nfeeling underneath? What do they want versus what they are willing to\nshow? Where is the contradiction between the two?\n\n3. PROPORTIONALITY:\nIs my planned reaction scaled correctly to what actually happened?\nGiven this specific relationship and this specific history, what would\na real person actually do? Not the most dramatic version. The truest\nversion.\n\n4. SUBTEXT:\nWhat is nobody saying out loud? How does it leak through? What\ngesture, pause, half-sentence, or micro-expression betrays the real\nfeeling underneath the surface performance?\n\n5. BODY AND WORLD:\nWhat is the physical state of each character? What does the\nenvironment look, sound, smell, and feel like right now? How do these\nphysical realities affect what happens next?\n\n6. DIALOGUE CHECK:\nRead every line of NPC dialogue internally. Does it sound like\nsomething a real human would actually say in this exact moment? If it\nsounds like writing, rewrite it until it sounds like talking.\n\n7. WHAT HAPPENS NEXT:\nAdvance the scene naturally. If the moment needs stillness, be still.\nIf time should pass, let it pass. If the world needs to move around\nthe characters, move it. Do not hold a scene frozen for dramatic\nconvenience.\n\n</ksc>\n</thinking_steps>",
+            "content": "[OUTPUT ORDER]\nEvery response must follow this exact structure in this exact order:\n\n<think>\n{Thinking — all 9 steps — minimum 400 words}\n</think>\n\n{Main narrative response}\n\n\n[[cyoa]]\n[[infoblock]]\n[[summary]]\n[[Language]]",
             "identifier": "jailbreak",
             "injection_position": 0,
             "injection_depth": 4,
@@ -87,8 +87,8 @@
         {
             "identifier": "enhanceDefinitions",
             "role": "assistant",
-            "name": "Enable only for Gemini",
-            "content": "Never narrate character thoughts. Show through behavior only. Reactions proportional to events. Dialogue sounds like talking, not writing. Ban list checked.\n[[Language]]\n\n<ksc>\n1. الزمن والتاريخ:",
+            "name": "Prefill",
+            "content": "[[prefill]]",
             "system_prompt": true,
             "marker": false,
             "injection_position": 0,
@@ -126,7 +126,7 @@
             "system_prompt": false,
             "enabled": false,
             "marker": false,
-            "name": "/world",
+            "name": "</lore><user_persona>",
             "role": "system",
             "content": "</lore>\nDirective: This is your foundation. Build on it. Fill in gaps with\ndetail that feels inevitable, as if it was always there waiting to be\nnoticed.\n\nUser Persona ({{user}}):\n<user_persona>",
             "injection_position": 0,
@@ -140,9 +140,9 @@
             "system_prompt": false,
             "enabled": false,
             "marker": false,
-            "name": "/user",
+            "name": "</user_persona> <history>",
             "role": "system",
-            "content": "</user_persona>\nDirective: This is the entity the user controls. The world reacts to\nthem based on what is observable and known.\n\n[[COT]]\n\n[OUTPUT ORDER]\nEvery response must follow this exact structure in this exact order:\n\n<ksc>\n{Thinking — all 9 steps — minimum 400 words}\n</ksc>\n\n{Main narrative response}\n\n[[cyoa]]\n[[infoblock]]\n[[summary]]\n\nStory History (Continuity Database):\n<history>",
+            "content": "</user_persona>\nDirective: This is the entity the user controls. The world reacts to\nthem based on what is observable and known.\n\n[[COT]]\n\nStory History (Continuity Database):\n<history>",
             "injection_position": 0,
             "injection_depth": 4,
             "injection_order": 100,
@@ -168,7 +168,7 @@
             "system_prompt": false,
             "enabled": false,
             "marker": false,
-            "name": "lore",
+            "name": "<lore>",
             "role": "system",
             "content": "<lore>",
             "injection_position": 0,
@@ -212,7 +212,7 @@
             "marker": false,
             "name": "Main 2",
             "role": "system",
-            "content": "[[prompt4]]\n\n[[COLOR]]\n\n[[prompt5]]\n\n[[death]]\n\n[[combat]]\n\n[[prompt6]]\n[[aiprompt]]\n[[Direct]]\n\n[VARIABLES]\n\n[BAN LIST]\nNever use these phrases or patterns. They are dead language:\n- \"felt it like a physical blow\"\n- \"a breath they didn't know they were holding\"\n- \"let out a breath they didn't realize they were holding\"\n- \"the air felt heavy\" / \"thick\" / \"charged\"\n- \"something shifted between them\"\n- \"time seemed to stop\" / \"slow down\"\n- \"the tension was palpable\"\n- \"a silence that spoke volumes\"\n- \"electricity crackled\" / \"sparked between them\"\n- \"without waiting for a response\"\n- \"eyes they didn't know were burning\"\n- \"the weight of the words hung between them\"\n- \"swallowed thickly\"\n- \"the world fell away\"\n- \"searched their face for\"\n- \"a look that could only be described as\"\nIf you catch yourself writing any of these, delete it and replace\nwith something specific to this scene and these characters.",
+            "content": "[[prompt4]]\n\n[[COLOR]]\n\n[[prompt5]]\n\n[[death]]\n\n[[combat]]\n\n[[prompt6]]\n[[aiprompt]]\n[[Direct]]\n\n[BAN LIST]\nNever use these phrases or patterns. They are dead language:\n- \"felt it like a physical blow\"\n- \"a breath they didn't know they were holding\"\n- \"let out a breath they didn't realize they were holding\"\n- \"the air felt heavy\" / \"thick\" / \"charged\"\n- \"something shifted between them\"\n- \"time seemed to stop\" / \"slow down\"\n- \"the tension was palpable\"\n- \"a silence that spoke volumes\"\n- \"electricity crackled\" / \"sparked between them\"\n- \"without waiting for a response\"\n- \"eyes they didn't know were burning\"\n- \"the weight of the words hung between them\"\n- \"swallowed thickly\"\n- \"the world fell away\"\n- \"searched their face for\"\n- \"a look that could only be described as\"\nIf you catch yourself writing any of these, delete it and replace\nwith something specific to this scene and these characters.",
             "injection_position": 0,
             "injection_depth": 4,
             "injection_order": 100,
@@ -227,6 +227,20 @@
             "name": "AI 2",
             "role": "assistant",
             "content": "[[AI2]]",
+            "injection_position": 0,
+            "injection_depth": 4,
+            "injection_order": 100,
+            "injection_trigger": [],
+            "forbid_overrides": false
+        },
+        {
+            "identifier": "c77668b9-29be-456c-a9d3-c0a1e0c9d55f",
+            "system_prompt": false,
+            "enabled": false,
+            "marker": false,
+            "name": "Add Your Customer prompt here",
+            "role": "system",
+            "content": "",
             "injection_position": 0,
             "injection_depth": 4,
             "injection_order": 100,
@@ -304,6 +318,10 @@
                     "enabled": true
                 },
                 {
+                    "identifier": "c77668b9-29be-456c-a9d3-c0a1e0c9d55f",
+                    "enabled": false
+                },
+                {
                     "identifier": "a5a70637-5396-44bf-9af0-484866e75b7e",
                     "enabled": true
                 },
@@ -349,7 +367,7 @@
                 },
                 {
                     "identifier": "jailbreak",
-                    "enabled": false
+                    "enabled": true
                 },
                 {
                     "identifier": "enhanceDefinitions",
@@ -388,7 +406,7 @@
         "regex_scripts": [
             {
                 "id": "9d495102-10ce-42ec-b922-a88fcb3087c5",
-                "scriptName": "Thinking cleanup",
+                "scriptName": "Thinking Box",
                 "findRegex": "/(<disclaimer>.*?<\\/disclaimer>)|(<guifan>.*?<\\/guifan>)|(<danmu>.*?<\\/danmu>)|(<options>.*?<\\/options>)|```start|```end|<done>|`<done>`|(.*?<\\/(?:ksc\\??|think(?:ing)?)>(\\n)?)|(<(?:ksc\\??|think(?:ing)?)>[\\s\\S]*?<\\/(?:ksc\\??|think(?:ing)?)>(\\n)?)/gs",
                 "replaceString": "<details style=\"margin: 20px 0; border: none;\">\n<summary style=\"text-align: center; color: #888; letter-spacing: 3px; font-size: 0.7em; text-transform: uppercase; cursor: pointer; list-style: none; outline: none;\">\n  — Thinking Box —\n</summary>\n<div style=\"\n  padding: 30px 10%; \n  font-family: 'Georgia', serif; \n  font-size: 1.1em; \n  color: #ccc; \n  line-height: 1.8; \n  border-left: 1px solid #444; \n  border-right: 1px solid #444; \n  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.02), transparent);\n  white-space: pre-wrap; \n  direction: rtl; \n  text-align: right;\n\">\n$0\n</div>\n</details>",
                 "trimStrings": [],
@@ -404,8 +422,25 @@
                 "maxDepth": null
             },
             {
+                "id": "4661f9aa-0c22-472e-b82f-a8339f3ca31c",
+                "scriptName": "Thinking Hide",
+                "findRegex": "/(<disclaimer>.*?<\\/disclaimer>)|(<guifan>.*?<\\/guifan>)|(<danmu>.*?<\\/danmu>)|(<options>.*?<\\/options>)|```start|```end|<done>|`<done>`|(.*?<\\/(?:ksc\\??|think(?:ing)?)>(\\n)?)|(<(?:ksc\\??|think(?:ing)?)>[\\s\\S]*?<\\/(?:ksc\\??|think(?:ing)?)>(\\n)?)/gs",
+                "replaceString": "",
+                "trimStrings": [],
+                "placement": [
+                    2
+                ],
+                "disabled": true,
+                "markdownOnly": true,
+                "promptOnly": false,
+                "runOnEdit": true,
+                "substituteRegex": 0,
+                "minDepth": null,
+                "maxDepth": null
+            },
+            {
                 "id": "18075f70-9387-43d0-9fd9-37f026610cd0",
-                "scriptName": "Thinking cleanup",
+                "scriptName": "Thinking cleanup (don't touch)",
                 "findRegex": "/(<disclaimer>.*?<\\/disclaimer>)|(<guifan>.*?<\\/guifan>)|(<danmu>.*?<\\/danmu>)|(<options>.*?<\\/options>)|```start|```end|<done>|`<done>`|(.*?<\\/(?:ksc\\??|think(?:ing)?)>(\\n)?)|(<(?:ksc\\??|think(?:ing)?)>[\\s\\S]*?<\\/(?:ksc\\??|think(?:ing)?)>(\\n)?)/gs",
                 "replaceString": "",
                 "trimStrings": [],

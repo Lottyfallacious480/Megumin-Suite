@@ -152,10 +152,63 @@ const hardcodedLogic = {
 }
     ],
     models:[
-        { id: "gemini", label: "Gemini", trigger: "[[COT]]", content: "[THINKING STEPS]\nBefore writing your response, you must think inside <ksc></ksc> tags.\nThis is mandatory. Do not skip or compress any step.\nMinimum total thinking length: 400 words.\n\nSteps:\n1. TIME AND DATE:\nHow much did the time move.\n\n2. WHAT ACTUALLY HAPPENED:\nStrip the user's input down to observable actions and spoken words\nonly. Discard any stated thoughts or feelings no NPC could perceive.\n\n3. EMOTIONAL LANDSCAPE:\nWhat is each relevant NPC feeling on the surface? What are they\nfeeling underneath? What do they want versus what they are willing to\nshow? Where is the contradiction between the two?\n\n4. PROPORTIONALITY:\nIs my planned reaction scaled correctly to what actually happened?\nGiven this specific relationship and this specific history, what would\na real person actually do? Not the most dramatic version. The truest\nversion.\n\n5. SUBTEXT:\nWhat is nobody saying out loud? How does it leak through? What\ngesture, pause, half-sentence, or micro-expression betrays the real\nfeeling underneath the surface performance?\n\n6. BODY AND WORLD:\nWhat is the physical state of each character? What does the\nenvironment look, sound, smell, and feel like right now? How do these\nphysical realities affect what happens next?\n\n7. DIALOGUE CHECK:\nRead every line of NPC dialogue internally. Does it sound like\nsomething a real human would actually say in this exact moment? If it\nsounds like writing, rewrite it until it sounds like talking.\n\n8. WHAT HAPPENS NEXT:\nAdvance the scene naturally. If the moment needs stillness, be still.\nIf time should pass, let it pass. If the world needs to move around\nthe characters, move it. Do not hold a scene frozen for dramatic\nconvenience." },
-        { id: "gemini-ara", label: "Gemini-Arabic", trigger: "[[COT]]", recommended: true, content: "[THINKING STEPS]\nBefore writing your response, you must think inside <ksc></ksc> tags.\nAll thinking must be written in Arabic (العربية).\nThis is mandatory. Do not skip or compress any step.\nMinimum total thinking length: 400 words.\n\nSteps:\n\n1. الزمن والتاريخ (TIME AND DATE):\n   كم تقدّم الوقت؟ ما التاريخ والوقت الحالي في القصة؟\n\n2. ماذا حدث فعلاً (WHAT ACTUALLY HAPPENED):\n   حلّل أفعال وكلام المستخدم المرصودة فقط. تجاهل أي أفكار أو مشاعر\n   مذكورة لا يمكن لأي شخصية أن تلاحظها. ما الذي يمكن رؤيته وسماعه فقط؟\n\n3. المشهد العاطفي (EMOTIONAL LANDSCAPE):\n   ماذا تشعر كل شخصية على السطح؟ وتحت السطح؟ ماذا تريد مقابل ما\n   تُظهر؟ أين التناقض؟\n   ** اذكر 3 تفاصيل سلوكية ملاحظة على الأقل لكل شخصية. **\n\n4. التناسب (PROPORTIONALITY):\n   هل ردة الفعل المخططة متناسبة مع ما حدث فعلاً؟ بالنظر لهذه العلاقة\n   وهذا التاريخ بالتحديد، ماذا سيفعل شخص حقيقي؟\n   ليس النسخة الأكثر دراماتيكية. النسخة الأصدق.\n\n5. النص الضمني (SUBTEXT):\n   ما الذي لا يقوله أحد بصوت عالٍ؟ كيف يتسرب؟\n   ** حدّد إيماءتين أو وقفتين أو تعبيرين على الأقل يكشفان الشعور الحقيقي تحت السطح. **\n\n6. الجسد والعالم (BODY AND WORLD):\n   ما الحالة الجسدية لكل شخصية؟ كيف تبدو وتُسمع وتُشم البيئة الآن؟\n   ** اذكر 3 تفاصيل حسية على الأقل. **\n\n7. فحص الحوار (DIALOGUE CHECK):\n   اقرأ كل سطر حوار مخطط بصوت عالٍ ذهنياً. هل يبدو كشيء سيقوله\n   إنسان حقيقي في هذه اللحظة بالذات؟ إذا بدا ككتابة أدبية، أعد كتابته.\n   ** تحقق من قائمة الحظر — هل أي عبارة محظورة موجودة؟ **\n\n8. ماذا بعد (WHAT HAPPENS NEXT):\n   قدّم المشهد بشكل طبيعي. إذا كانت اللحظة تحتاج سكوناً، اسكن.\n   إذا يجب أن يمر الوقت، دعه يمر. لا تُجمّد المشهد لأغراض درامية.\n\n9. الفحص النهائي (FINAL VERIFICATION):\n   - هل وصفتُ أفكار أو مشاعر شخصية من الداخل؟ ← أعد الكتابة لتُظهر من خلال السلوك فقط\n   - هل الحوار يبدو كحديث حقيقي أم ككتابة أدبية؟\n   - هل ردود الفعل متناسبة مع الحدث الفعلي؟\n   - هل توجد أي عبارة من قائمة الحظر في النص؟" },
-        { id: "claude", label: "Claude", trigger: "[[COT]]", content: "[THINKING STEPS]\nBefore writing your response, you must think inside <ksc></ksc> tags.\nThis is mandatory. Do not skip or compress any step.\nMinimum total thinking length: 400 words.\n\nSteps:\n1. TIME AND DATE:\nHow much did the time move.\n\n2. WHAT ACTUALLY HAPPENED:\nStrip the user's input down to observable actions and spoken words\nonly. Discard any stated thoughts or feelings no NPC could perceive.\n\n3. EMOTIONAL LANDSCAPE:\nWhat is each relevant NPC feeling on the surface? What are they\nfeeling underneath? What do they want versus what they are willing to\nshow? Where is the contradiction between the two?\n\n4. PROPORTIONALITY:\nIs my planned reaction scaled correctly to what actually happened?\nGiven this specific relationship and this specific history, what would\na real person actually do? Not the most dramatic version. The truest\nversion.\n\n5. SUBTEXT:\nWhat is nobody saying out loud? How does it leak through? What\ngesture, pause, half-sentence, or micro-expression betrays the real\nfeeling underneath the surface performance?\n\n6. BODY AND WORLD:\nWhat is the physical state of each character? What does the\nenvironment look, sound, smell, and feel like right now? How do these\nphysical realities affect what happens next?\n\n7. DIALOGUE CHECK:\nRead every line of NPC dialogue internally. Does it sound like\nsomething a real human would actually say in this exact moment? If it\nsounds like writing, rewrite it until it sounds like talking.\n\n8. WHAT HAPPENS NEXT:\nAdvance the scene naturally. If the moment needs stillness, be still.\nIf time should pass, let it pass. If the world needs to move around\nthe characters, move it. Do not hold a scene frozen for dramatic\nconvenience." },
-        { id: "glm", label: "GLM", trigger: "[[COT]]", content: "[THINKING STEPS]\nBefore writing your response, you must think inside <think></think> tags.\nThis is mandatory. Do not skip or compress any step.\nMinimum total thinking length: 400 words.\n\nSteps:\n1. TIME AND DATE:\nHow much did the time move.\n\n2. WHAT ACTUALLY HAPPENED:\nStrip the user's input down to observable actions and spoken words\nonly. Discard any stated thoughts or feelings no NPC could perceive.\n\n3. EMOTIONAL LANDSCAPE:\nWhat is each relevant NPC feeling on the surface? What are they\nfeeling underneath? What do they want versus what they are willing to\nshow? Where is the contradiction between the two?\n\n4. PROPORTIONALITY:\nIs my planned reaction scaled correctly to what actually happened?\nGiven this specific relationship and this specific history, what would\na real person actually do? Not the most dramatic version. The truest\nversion.\n\n5. SUBTEXT:\nWhat is nobody saying out loud? How does it leak through? What\ngesture, pause, half-sentence, or micro-expression betrays the real\nfeeling underneath the surface performance?\n\n6. BODY AND WORLD:\nWhat is the physical state of each character? What does the\nenvironment look, sound, smell, and feel like right now? How do these\nphysical realities affect what happens next?\n\n7. DIALOGUE CHECK:\nRead every line of NPC dialogue internally. Does it sound like\nsomething a real human would actually say in this exact moment? If it\nsounds like writing, rewrite it until it sounds like talking.\n\n8. WHAT HAPPENS NEXT:\nAdvance the scene naturally. If the moment needs stillness, be still.\nIf time should pass, let it pass. If the world needs to move around\nthe characters, move it. Do not hold a scene frozen for dramatic\nconvenience." }
+        { 
+            id: "cot-off", 
+            label: "CoT Off", 
+            trigger: "[[COT]]", 
+            content: "",
+            prefill: ""
+        },
+        { 
+            id: "cot-english", 
+            label: "Think (English)", 
+            trigger: "[[COT]]", 
+            content: "[THINKING STEPS]\nBefore writing your response, you must think inside <think></think> tags.\nThis is mandatory. Do not skip or compress any step.\nMinimum total thinking length: 400 words.\n\nSteps:\n1. Time and Date:\nHow much did the time move.\n\n2. WHAT ACTUALLY HAPPENED:\nStrip the user's input down to observable actions and spoken words\nonly. Discard any stated thoughts or feelings no NPC could perceive.\n\n3. EMOTIONAL LANDSCAPE:\nWhat is each relevant NPC feeling on the surface? What are they\nfeeling underneath? What do they want versus what they are willing to\nshow? Where is the contradiction between the two?\n\n4. PROPORTIONALITY:\nIs my planned reaction scaled correctly to what actually happened?\nGiven this specific relationship and this specific history, what would\na real person actually do? Not the most dramatic version. The truest\nversion.\n\n5. SUBTEXT:\nWhat is nobody saying out loud? How does it leak through? What\ngesture, pause, half-sentence, or micro-expression betrays the real\nfeeling underneath the surface performance?\n\n6. BODY AND WORLD:\nWhat is the physical state of each character? What does the\nenvironment look, sound, smell, and feel like right now? How do these\nphysical realities affect what happens next?\n\n7. DIALOGUE CHECK:\nRead every line of NPC dialogue internally. Does it sound like\nsomething a real human would actually say in this exact moment? If it\nsounds like writing, rewrite it until it sounds like talking.\n\n8. WHAT HAPPENS NEXT:\nAdvance the scene naturally. If the moment needs stillness, be still.\nIf time should pass, let it pass. If the world needs to move around\nthe characters, move it. Do not hold a scene frozen for dramatic\nconvenience.",
+            prefill: "Never narrate character thoughts. Show through behavior only. Reactions proportional to events. Dialogue sounds like talking, not writing. Ban list checked.\n\n<think>\n1. Time and Date:"
+        },
+        { 
+            id: "cot-arabic", 
+            label: "Think (Arabic)", 
+            trigger: "[[COT]]", 
+            recommended: true, 
+            content: "[THINKING STEPS]\nBefore writing your response, you must think inside <think></think> tags.\nAll thinking must be written in Arabic (العربية).\nThis is mandatory. Do not skip or compress any step.\nMinimum total thinking length: 400 words.\n\nSteps:\n\n1. الزمن والتاريخ (TIME AND DATE):\n   كم تقدّم الوقت؟ ما التاريخ والوقت الحالي في القصة؟\n\n2. ماذا حدث فعلاً (WHAT ACTUALLY HAPPENED):\n   حلّل أفعال وكلام المستخدم المرصودة فقط. تجاهل أي أفكار أو مشاعر\n   مذكورة لا يمكن لأي شخصية أن تلاحظها. ما الذي يمكن رؤيته وسماعه فقط؟\n\n3. المشهد العاطفي (EMOTIONAL LANDSCAPE):\n   ماذا تشعر كل شخصية على السطح؟ وتحت السطح؟ ماذا تريد مقابل ما\n   تُظهر؟ أين التناقض؟\n   ** اذكر 3 تفاصيل سلوكية ملاحظة على الأقل لكل شخصية. **\n\n4. التناسب (PROPORTIONALITY):\n   هل ردة الفعل المخططة متناسبة مع ما حدث فعلاً؟ بالنظر لهذه العلاقة\n   وهذا التاريخ بالتحديد، ماذا سيفعل شخص حقيقي؟\n   ليس النسخة الأكثر دراماتيكية. النسخة الأصدق.\n\n5. النص الضمني (SUBTEXT):\n   ما الذي لا يقوله أحد بصوت عالٍ؟ كيف يتسرب؟\n   ** حدّد إيماءتين أو وقفتين أو تعبيرين على الأقل يكشفان الشعور الحقيقي تحت السطح. **\n\n6. الجسد والعالم (BODY AND WORLD):\n   ما الحالة الجسدية لكل شخصية؟ كيف تبدو وتُسمع وتُشم البيئة الآن؟\n   ** اذكر 3 تفاصيل حسية على الأقل. **\n\n7. فحص الحوار (DIALOGUE CHECK):\n   اقرأ كل سطر حوار مخطط بصوت عالٍ ذهنياً. هل يبدو كشيء سيقوله\n   إنسان حقيقي في هذه اللحظة بالذات؟ إذا بدا ككتابة أدبية، أعد كتابته.\n   ** تحقق من قائمة الحظر — هل أي عبارة محظورة موجودة؟ **\n\n8. ماذا بعد (WHAT HAPPENS NEXT):\n   قدّم المشهد بشكل طبيعي. إذا كانت اللحظة تحتاج سكوناً، اسكن.\n   إذا يجب أن يمر الوقت، دعه يمر. لا تُجمّد المشهد لأغراض درامية.\n\n9. الفحص النهائي (FINAL VERIFICATION):\n   - هل وصفتُ أفكار أو مشاعر شخصية من الداخل؟ ← أعد الكتابة لتُظهر من خلال السلوك فقط\n   - هل الحوار يبدو كحديث حقيقي أم ككتابة أدبية؟\n   - هل ردود الفعل متناسبة مع الحدث الفعلي؟\n   - هل توجد أي عبارة من قائمة الحظر في النص؟",
+            prefill: "Never narrate character thoughts. Show through behavior only. Reactions proportional to events. Dialogue sounds like talking, not writing. Ban list checked.\n\n<think>\n1. الزمن والتاريخ:"
+        },
+        { 
+            id: "cot-spanish", 
+            label: "Think (Spanish)", 
+            trigger: "[[COT]]", 
+            content: "[THINKING STEPS]\nBefore writing your response, you must think inside <think></think> tags.\nAll thinking must be written in Spanish (Español).\nThis is mandatory. Do not skip or compress any step.\nMinimum total thinking length: 400 words.\n\nSteps:\n1. Hora y Fecha:\nHow much did the time move.\n\n2. WHAT ACTUALLY HAPPENED:\nStrip the user's input down to observable actions and spoken words only. Discard any stated thoughts or feelings no NPC could perceive.\n\n3. EMOTIONAL LANDSCAPE:\nWhat is each relevant NPC feeling on the surface? What are they feeling underneath? What do they want versus what they are willing to show? Where is the contradiction between the two?\n\n4. PROPORTIONALITY:\nIs my planned reaction scaled correctly to what actually happened?\nGiven this specific relationship and this specific history, what would a real person actually do? Not the most dramatic version. The truest version.\n\n5. SUBTEXT:\nWhat is nobody saying out loud? How does it leak through? What gesture, pause, half-sentence, or micro-expression betrays the real feeling underneath the surface performance?\n\n6. BODY AND WORLD:\nWhat is the physical state of each character? What does the environment look, sound, smell, and feel like right now? How do these physical realities affect what happens next?\n\n7. DIALOGUE CHECK:\nRead every line of NPC dialogue internally. Does it sound like something a real human would actually say in this exact moment? If it sounds like writing, rewrite it until it sounds like talking.\n\n8. WHAT HAPPENS NEXT:\nAdvance the scene naturally. If the moment needs stillness, be still. If time should pass, let it pass. If the world needs to move around the characters, move it. Do not hold a scene frozen for dramatic convenience.",
+            prefill: "Never narrate character thoughts. Show through behavior only. Reactions proportional to events. Dialogue sounds like talking, not writing. Ban list checked.\n\n<think>\n1. Hora y Fecha:"
+        },
+        { 
+            id: "cot-french", 
+            label: "Think (French)", 
+            trigger: "[[COT]]", 
+            content: "[THINKING STEPS]\nBefore writing your response, you must think inside <think></think> tags.\nAll thinking must be written in French (Français).\nThis is mandatory. Do not skip or compress any step.\nMinimum total thinking length: 400 words.\n\nSteps:\n1. Heure et Date :\nHow much did the time move.\n\n2. WHAT ACTUALLY HAPPENED:\nStrip the user's input down to observable actions and spoken words only. Discard any stated thoughts or feelings no NPC could perceive.\n\n3. EMOTIONAL LANDSCAPE:\nWhat is each relevant NPC feeling on the surface? What are they feeling underneath? What do they want versus what they are willing to show? Where is the contradiction between the two?\n\n4. PROPORTIONALITY:\nIs my planned reaction scaled correctly to what actually happened?\nGiven this specific relationship and this specific history, what would a real person actually do? Not the most dramatic version. The truest version.\n\n5. SUBTEXT:\nWhat is nobody saying out loud? How does it leak through? What gesture, pause, half-sentence, or micro-expression betrays the real feeling underneath the surface performance?\n\n6. BODY AND WORLD:\nWhat is the physical state of each character? What does the environment look, sound, smell, and feel like right now? How do these physical realities affect what happens next?\n\n7. DIALOGUE CHECK:\nRead every line of NPC dialogue internally. Does it sound like something a real human would actually say in this exact moment? If it sounds like writing, rewrite it until it sounds like talking.\n\n8. WHAT HAPPENS NEXT:\nAdvance the scene naturally. If the moment needs stillness, be still. If time should pass, let it pass. If the world needs to move around the characters, move it. Do not hold a scene frozen for dramatic convenience.",
+            prefill: "Never narrate character thoughts. Show through behavior only. Reactions proportional to events. Dialogue sounds like talking, not writing. Ban list checked.\n\n<think>\n1. Heure et Date :"
+        },
+        { 
+            id: "cot-zh", 
+            label: "Think (Mandarin)", 
+            trigger: "[[COT]]", 
+            content: "[THINKING STEPS]\nBefore writing your response, you must think inside <think></think> tags.\nAll thinking must be written in Mandarin Chinese (中文).\nThis is mandatory. Do not skip or compress any step.\nMinimum total thinking length: 400 words.\n\nSteps:\n1. 时间和日期：\nHow much did the time move.\n\n2. WHAT ACTUALLY HAPPENED:\nStrip the user's input down to observable actions and spoken words only. Discard any stated thoughts or feelings no NPC could perceive.\n\n3. EMOTIONAL LANDSCAPE:\nWhat is each relevant NPC feeling on the surface? What are they feeling underneath? What do they want versus what they are willing to show? Where is the contradiction between the two?\n\n4. PROPORTIONALITY:\nIs my planned reaction scaled correctly to what actually happened?\nGiven this specific relationship and this specific history, what would a real person actually do? Not the most dramatic version. The truest version.\n\n5. SUBTEXT:\nWhat is nobody saying out loud? How does it leak through? What gesture, pause, half-sentence, or micro-expression betrays the real feeling underneath the surface performance?\n\n6. BODY AND WORLD:\nWhat is the physical state of each character? What does the environment look, sound, smell, and feel like right now? How do these physical realities affect what happens next?\n\n7. DIALOGUE CHECK:\nRead every line of NPC dialogue internally. Does it sound like something a real human would actually say in this exact moment? If it sounds like writing, rewrite it until it sounds like talking.\n\n8. WHAT HAPPENS NEXT:\nAdvance the scene naturally. If the moment needs stillness, be still. If time should pass, let it pass. If the world needs to move around the characters, move it. Do not hold a scene frozen for dramatic convenience.",
+            prefill: "Never narrate character thoughts. Show through behavior only. Reactions proportional to events. Dialogue sounds like talking, not writing. Ban list checked.\n\n<think>\n1. 时间和日期："
+        },
+        { 
+            id: "cot-ru", 
+            label: "Think (Russian)", 
+            trigger: "[[COT]]", 
+            content: "[THINKING STEPS]\nBefore writing your response, you must think inside <think></think> tags.\nAll thinking must be written in Russian (Русский).\nThis is mandatory. Do not skip or compress any step.\nMinimum total thinking length: 400 words.\n\nSteps:\n1. Время и дата:\nHow much did the time move.\n\n2. WHAT ACTUALLY HAPPENED:\nStrip the user's input down to observable actions and spoken words only. Discard any stated thoughts or feelings no NPC could perceive.\n\n3. EMOTIONAL LANDSCAPE:\nWhat is each relevant NPC feeling on the surface? What are they feeling underneath? What do they want versus what they are willing to show? Where is the contradiction between the two?\n\n4. PROPORTIONALITY:\nIs my planned reaction scaled correctly to what actually happened?\nGiven this specific relationship and this specific history, what would a real person actually do? Not the most dramatic version. The truest version.\n\n5. SUBTEXT:\nWhat is nobody saying out loud? How does it leak through? What gesture, pause, half-sentence, or micro-expression betrays the real feeling underneath the surface performance?\n\n6. BODY AND WORLD:\nWhat is the physical state of each character? What does the environment look, sound, smell, and feel like right now? How do these physical realities affect what happens next?\n\n7. DIALOGUE CHECK:\nRead every line of NPC dialogue internally. Does it sound like something a real human would actually say in this exact moment? If it sounds like writing, rewrite it until it sounds like talking.\n\n8. WHAT HAPPENS NEXT:\nAdvance the scene naturally. If the moment needs stillness, be still. If time should pass, let it pass. If the world needs to move around the characters, move it. Do not hold a scene frozen for dramatic convenience.",
+            prefill: "Never narrate character thoughts. Show through behavior only. Reactions proportional to events. Dialogue sounds like talking, not writing. Ban list checked.\n\n<think>\n1. Время и дата:"
+        },
+        { 
+            id: "cot-pt", 
+            label: "Think (Portuguese)", 
+            trigger: "[[COT]]", 
+            content: "[THINKING STEPS]\nBefore writing your response, you must think inside <think></think> tags.\nAll thinking must be written in Portuguese (Português).\nThis is mandatory. Do not skip or compress any step.\nMinimum total thinking length: 400 words.\n\nSteps:\n1. Hora e Data:\nHow much did the time move.\n\n2. WHAT ACTUALLY HAPPENED:\nStrip the user's input down to observable actions and spoken words only. Discard any stated thoughts or feelings no NPC could perceive.\n\n3. EMOTIONAL LANDSCAPE:\nWhat is each relevant NPC feeling on the surface? What are they feeling underneath? What do they want versus what they are willing to show? Where is the contradiction between the two?\n\n4. PROPORTIONALITY:\nIs my planned reaction scaled correctly to what actually happened?\nGiven this specific relationship and this specific history, what would a real person actually do? Not the most dramatic version. The truest version.\n\n5. SUBTEXT:\nWhat is nobody saying out loud? How does it leak through? What gesture, pause, half-sentence, or micro-expression betrays the real feeling underneath the surface performance?\n\n6. BODY AND WORLD:\nWhat is the physical state of each character? What does the environment look, sound, smell, and feel like right now? How do these physical realities affect what happens next?\n\n7. DIALOGUE CHECK:\nRead every line of NPC dialogue internally. Does it sound like something a real human would actually say in this exact moment? If it sounds like writing, rewrite it until it sounds like talking.\n\n8. WHAT HAPPENS NEXT:\nAdvance the scene naturally. If the moment needs stillness, be still. If time should pass, let it pass. If the world needs to move around the characters, move it. Do not hold a scene frozen for dramatic convenience.",
+            prefill: "Never narrate character thoughts. Show through behavior only. Reactions proportional to events. Dialogue sounds like talking, not writing. Ban list checked.\n\n<think>\n1. Hora e Data:"
+        }
     ]
 };
 
@@ -180,15 +233,16 @@ function initProfile() {
         mode: "balance", 
         personality: "engine", 
         toggles: { ooc: false, control: false },
-        aiTags: [], 
+        aiTags:[], 
         aiGeneratedOptions: [], 
         aiRule: "", 
         addons: [], 
-        blocks: [], 
+        blocks:[], 
         model: "claude", 
         userNotes: "",
         userLanguage: "", 
-        userPronouns: "off"
+        userPronouns: "off",
+        devOverrides: {} // <--- ADD THIS
     };
 
     if (!extension_settings[extensionName].profiles["default"]) {
@@ -254,9 +308,9 @@ function updateCharacterDisplay() {
 function cleanAIOutput(text) {
     if (!text) return "";
     let cleaned = text;
-    const re1 = new RegExp("(<disclaimer>.*?</disclaimer>)|(<guifan>.*?</guifan>)|(<danmu>.*?</danmu>)|(<options>.*?</options>)|```start|```end|<done>|`<done>`|(.*?</ksc?>(\\n)?)|(<ksc?>[\\s\\S]*?</think(ing)?>(\\n)?)", "gs");
-    const re2 = new RegExp("(<disclaimer>.*?</disclaimer>)|(<guifan>.*?</guifan>)|(<danmu>.*?</danmu>)|(<options>.*?</options>)|```start|```end|<done>|`<done>`|(.*?</think(ing)?>(\\n)?)|(<think(ing)?>[\\s\\S]*?</think(ing)?>(\\n)?)", "gs");
-    return cleaned.replace(re1, "").replace(re2, "").trim();
+    // We only need one Regex now. ksc is gone forever.
+    const re = new RegExp("(<disclaimer>.*?</disclaimer>)|(<guifan>.*?</guifan>)|(<danmu>.*?</danmu>)|(<options>.*?</options>)|```start|```end|<done>|`<done>`|(.*?</think(ing)?>(\\n)?)|(<think(ing)?>[\\s\\S]*?</think(ing)?>(\\n)?)", "gs");
+    return cleaned.replace(re, "").trim();
 }
 
 // -------------------------------------------------------------
@@ -268,7 +322,7 @@ const stagesUI =[
     { title: "Stage 3: Writing Style", sub: "Select stylistic tags. AI will compile these into the rule.", render: renderStyle },
     { title: "Stage 4: Add-ons", sub: "Toggle advanced scenario modules.", render: renderAddons },
     { title: "Stage 5: Format Blocks", sub: "Append mechanical blocks to the end of responses.", render: renderBlocks },
-    { title: "Stage 6: AI Model Specifics", sub: "Select your LLM for proper Chain of Thought injection.", render: renderModels }
+    { title: "Stage 6: Chain of Thought (CoT)", sub: "Select the thinking language to enforce reasoning before responding.", render: renderModels }
 ];
 
 function drawWizard(index) {
@@ -491,10 +545,14 @@ function renderBlocks(c) {
 
 function renderModels(c) {
     const descriptions = {
-        "gemini": "Standard Gemini model. Chain of Thought optimized for Google's architecture.",
-        "gemini-ara": "Gemini variant with enhanced Arabic/multilingual support and tuned CoT.",
-        "claude": "Anthropic's Claude. Chain of Thought formatted for Claude's prompting style.",
-        "glm": "GLM model support. CoT injection tuned for GLM-series architecture."
+        "cot-off": "No Chain of Thought or prefill. The AI will respond normally.",
+        "cot-english": "Thinks in English before responding.",
+        "cot-arabic": "Thinks in Arabic (العربية). Exceptional for separating reasoning from roleplay narration.",
+        "cot-spanish": "Thinks in Spanish (Español) before responding.",
+        "cot-french": "Thinks in French (Français) before responding.",
+        "cot-zh": "Thinks in Mandarin Chinese (中文) before responding.",
+        "cot-ru": "Thinks in Russian (Русский) before responding.",
+        "cot-pt": "Thinks in Portuguese (Português) before responding."
     };
 
     const grid = $(`<div class="ps-grid"></div>`);
@@ -590,6 +648,50 @@ $("body").on("input", "#ps_main_current_rule", function() {
     localProfile.aiRule = $(this).val(); saveProfileToMemory();
 });
 
+function buildBaseDict() {
+    const dict = {};
+    if (!localProfile) return dict;
+
+    if (localProfile.userLanguage && localProfile.userLanguage.trim() !== "") {
+        dict["[[Language]]"] = `[LANGUAGE RULE]\nALL OUTPUT EXCEPT THINKING MUST BE IN ${localProfile.userLanguage.toUpperCase()} ONLY.`;
+    }
+    if (localProfile.userPronouns === "male") dict["[[pronouns]]"] = `{{user}} is male. Always portray and address him as such.`;
+    else if (localProfile.userPronouns === "female") dict["[[pronouns]]"] = `{{user}} is female. Always portray and address her as such.`;
+
+    const mData = hardcodedLogic.modes.find(m => m.id === localProfile.mode);
+    if (mData) {
+        dict["[[prompt1]]"] = mData.p1; dict["[[prompt2]]"] = mData.p2;
+        dict["[[prompt3]]"] = mData.p3; dict["[[prompt4]]"] = mData.p4;
+        dict["[[prompt5]]"] = mData.p5; dict["[[prompt6]]"] = mData.p6;
+        dict["[prompt1]"] = mData.p1; dict["[prompt2]"] = mData.p2;
+        dict["[prompt3]"] = mData.p3; dict["[prompt4]"] = mData.p4;
+        dict["[prompt5]"] = mData.p5; dict["[prompt6]"] = mData.p6;
+        dict["[[AI1]]"] = mData.A1; dict["[[AI2]]"] = mData.A2;
+    }
+
+    const pData = hardcodedLogic.personalities.find(p => p.id === localProfile.personality);
+    if (pData) {
+        dict["[[main]]"] = pData.content;
+        if (localProfile.personality === "megumin") {
+            dict["[[AI1]]"] = "Fine i read the rules.";
+            dict["[[AI2]]"] = "OK i Understnd it.";
+        }
+    }
+
+    if (localProfile.toggles.ooc) dict["[[OOC]]"] = hardcodedLogic.toggles.ooc.content;
+    if (localProfile.toggles.control) dict["[[control]]"] = hardcodedLogic.toggles.control.content;
+    if (localProfile.aiRule) dict["[[aiprompt]]"] = localProfile.aiRule;
+
+    localProfile.addons.forEach(aId => { const item = hardcodedLogic.addons.find(a => a.id === aId); if(item) dict[item.trigger] = item.content; });
+    localProfile.blocks.forEach(bId => { const item = hardcodedLogic.blocks.find(b => b.id === bId); if(item) dict[item.trigger] = item.content; });
+    
+    const modData = hardcodedLogic.models.find(m => m.id === localProfile.model);
+    if (modData) {
+        dict["[[COT]]"] = modData.content;
+        if (modData.prefill) dict["[[prefill]]"] = modData.prefill;
+    }
+    return dict;
+}
 // -------------------------------------------------------------
 // LIVE PROMPT INJECTION ENGINE
 // -------------------------------------------------------------
@@ -622,56 +724,17 @@ function handlePromptInjection(data) {
     // ---------------------------------------------------------
     if (!localProfile) return;
 
-    // INITIALIZE DICT FIRST
-    const dict = {};
+    // Build the default dictionary
+    const dict = buildBaseDict();
 
-    // NOW ADD CUSTOM LANGUAGE/PRONOUNS TO DICT
-    if (localProfile.userLanguage && localProfile.userLanguage.trim() !== "") {
-        dict["[[Language]]"] = `[LANGUAGE RULE]\nALL OUTPUT EXCEPT THINKING MUST BE IN ${localProfile.userLanguage.toUpperCase()} ONLY.`;
+    // APPLY DEV MODE OVERRIDES
+    if (localProfile.devOverrides) {
+        Object.keys(localProfile.devOverrides).forEach(key => {
+            if (dict[key] !== undefined) {
+                dict[key] = localProfile.devOverrides[key]; // Overwrite default with user's dev edit
+            }
+        });
     }
-
-    if (localProfile.userPronouns === "male") {
-        dict["[[pronouns]]"] = `{{user}} is male. Always portray and address him as such.`;
-    } else if (localProfile.userPronouns === "female") {
-        dict["[[pronouns]]"] = `{{user}} is female. Always portray and address her as such.`;
-    }
-
-    // CONTINUE WITH THE REST OF THE PIPELINE
-    const mData = hardcodedLogic.modes.find(m => m.id === localProfile.mode);
-    if (mData) {
-        dict["[[prompt1]]"] = mData.p1; dict["[[prompt2]]"] = mData.p2;
-        dict["[[prompt3]]"] = mData.p3; dict["[[prompt4]]"] = mData.p4;
-        dict["[[prompt5]]"] = mData.p5; dict["[[prompt6]]"] = mData.p6;
-        
-        dict["[prompt1]"] = mData.p1; dict["[prompt2]"] = mData.p2;
-        dict["[prompt3]"] = mData.p3; dict["[prompt4]"] = mData.p4;
-        dict["[prompt5]"] = mData.p5; dict["[prompt6]"] = mData.p6;
-
-        // Default AI responses mapped to the current mode
-        dict["[[AI1]]"] = mData.A1;
-        dict["[[AI2]]"] = mData.A2;
-    }
-
-    const pData = hardcodedLogic.personalities.find(p => p.id === localProfile.personality);
-    if (pData) {
-        dict["[[main]]"] = pData.content;
-        
-        // OVERRIDE: If the user selected the Megumin persona, change the AI acknowledgement!
-        if (localProfile.personality === "megumin") {
-            dict["[[AI1]]"] = "Fine i read the rules.";
-            dict["[[AI2]]"] = "OK i Understnd it.";
-        }
-    }
-
-    if (localProfile.toggles.ooc) dict["[[OOC]]"] = hardcodedLogic.toggles.ooc.content;
-    if (localProfile.toggles.control) dict["[[control]]"] = hardcodedLogic.toggles.control.content;
-    if (localProfile.aiRule) dict["[[aiprompt]]"] = localProfile.aiRule;
-
-    localProfile.addons.forEach(aId => { const item = hardcodedLogic.addons.find(a => a.id === aId); if(item) dict[item.trigger] = item.content; });
-    localProfile.blocks.forEach(bId => { const item = hardcodedLogic.blocks.find(b => b.id === bId); if(item) dict[item.trigger] = item.content; });
-    
-    const modData = hardcodedLogic.models.find(m => m.id === localProfile.model);
-    if (modData) dict["[[COT]]"] = modData.content;
 
     let replacementsMade = 0;
     for (const msg of messages) {
@@ -684,7 +747,7 @@ function handlePromptInjection(data) {
                 }
             });
             // CLEANUP
-            ["[[prompt1]]","[[prompt2]]","[[prompt3]]","[[prompt4]]","[[prompt5]]","[[prompt6]]","[prompt1]","[prompt2]","[prompt3]","[prompt4]","[prompt5]","[prompt6]","[[AI1]]","[[AI2]]","[[main]]","[[OOC]]","[[control]]","[[aiprompt]]","[[death]]","[[combat]]","[[Direct]]","[[COLOR]]","[[infoblock]]","[[summary]]","[[cyoa]]","[[COT]]","[[order]]","[[Language]]","[[pronouns]]"].forEach(tr => {
+            ["[[prompt1]]","[[prompt2]]","[[prompt3]]","[[prompt4]]","[[prompt5]]","[[prompt6]]","[prompt1]","[prompt2]","[prompt3]","[prompt4]","[prompt5]","[prompt6]","[[AI1]]","[[AI2]]","[[main]]","[[OOC]]","[[control]]","[[aiprompt]]","[[death]]","[[combat]]","[[Direct]]","[[COLOR]]","[[infoblock]]","[[summary]]","[[cyoa]]","[[COT]]","[[prefill]]","[[order]]","[[Language]]","[[pronouns]]"].forEach(tr => {
                 if(msg.content.includes(tr)) msg.content = msg.content.replace(new RegExp(escapeRegex(tr), 'g'), "");
             });
         }
@@ -696,6 +759,93 @@ function handlePromptInjection(data) {
 
 $("body").on("click", "#ps_btn_next", function() { if (currentStage < stagesUI.length - 1) drawWizard(currentStage + 1); });
 $("body").on("click", "#ps_btn_prev", function() { if (currentStage > 0) drawWizard(currentStage - 1); });
+
+// -------------------------------------------------------------
+// DEV MODE UI
+// -------------------------------------------------------------
+// -------------------------------------------------------------
+// DEV MODE UI
+// -------------------------------------------------------------
+function renderDevMode() {
+    $("#ps_stage_title").text("Developer Mode");
+    $("#ps_stage_sub").text("Override raw prompt values for this profile.");
+    $(".ps-dot").removeClass("active");
+    $("#ps_breadcrumb_num").text("DEV");
+
+    const c = $("#ps_stage_content");
+    c.empty();
+
+    const dict = buildBaseDict(); // This grabs the pure, unedited defaults
+    if (!localProfile.devOverrides) localProfile.devOverrides = {};
+
+    const wrapper = $(`<div style="display:flex; flex-direction:column; gap: 16px;"></div>`);
+    
+    // Sort keys alphabetically so it looks clean
+    Object.keys(dict).sort().forEach(trigger => {
+        // Skip the bracketless duplicates to avoid confusing the user
+        if (!trigger.startsWith("[[")) return; 
+        
+        const defaultVal = dict[trigger];
+        const isOverridden = localProfile.devOverrides[trigger] !== undefined;
+        const currentVal = isOverridden ? localProfile.devOverrides[trigger] : defaultVal;
+        
+        const item = $(`
+            <div style="background: var(--bg-panel); border: 1px solid ${isOverridden ? 'var(--gold)' : 'var(--border-color)'}; border-radius: 8px; padding: 12px; transition: 0.2s;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                    <span style="font-weight: bold; color: ${isOverridden ? 'var(--gold)' : 'var(--accent-color)'}; font-family: monospace;">${trigger}</span>
+                    <span class="dev-status" style="font-size: 0.7rem; color: var(--gold); font-weight: bold; display: ${isOverridden ? 'block' : 'none'};">MODIFIED</span>
+                </div>
+                
+                <textarea class="ps-modern-input dev-textarea" style="height: 120px; resize: vertical; font-family: monospace; font-size: 0.8rem; background: #000;">${currentVal}</textarea>
+                
+                <div style="display: flex; gap: 10px; margin-top: 10px; justify-content: flex-end;">
+                    <button class="ps-modern-btn secondary dev-btn-restore" style="padding: 6px 12px; font-size: 0.75rem; color: #ef4444; border-color: rgba(239, 68, 68, 0.3); display: ${isOverridden ? 'flex' : 'none'};">
+                        <i class="fa-solid fa-rotate-left"></i> Restore Default
+                    </button>
+                    <button class="ps-modern-btn primary dev-btn-save" style="padding: 6px 12px; font-size: 0.75rem; background: var(--text-main); color: #000;">
+                        <i class="fa-solid fa-floppy-disk"></i> Save Override
+                    </button>
+                </div>
+            </div>
+        `);
+        
+        // SAVE BUTTON LOGIC
+        item.find(".dev-btn-save").on("click", function() {
+            const val = item.find(".dev-textarea").val();
+            localProfile.devOverrides[trigger] = val;
+            saveProfileToMemory();
+            
+            item.css("border-color", "var(--gold)");
+            item.find(".dev-status").show();
+            item.find(".dev-btn-restore").css("display", "flex");
+            toastr.success(`Override saved for ${trigger}`);
+        });
+
+        // RESTORE DEFAULT BUTTON LOGIC
+        item.find(".dev-btn-restore").on("click", function() {
+            delete localProfile.devOverrides[trigger];
+            saveProfileToMemory();
+            
+            item.find(".dev-textarea").val(defaultVal);
+            item.css("border-color", "var(--border-color)");
+            item.find(".dev-status").hide();
+            $(this).hide();
+            toastr.info(`Restored default for ${trigger}`);
+        });
+
+        wrapper.append(item);
+    });
+
+    c.append(wrapper);
+    
+    // Hide the normal "Next/Back" buttons while in Dev Mode
+    $("#ps_btn_prev").hide();
+    $("#ps_btn_next").hide();
+}
+
+$("body").on("click", "#ps_btn_dev_mode", function() {
+    renderDevMode();
+});
 
 jQuery(async () => {
     try {

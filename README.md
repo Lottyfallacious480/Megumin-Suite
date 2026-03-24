@@ -1,273 +1,138 @@
 
 
-# Megumin Suite for SillyTavern
+# 💥 Megumin Suite v4.1 - The "Dev Mode" Update
 
 ---
 
 **Hello. Kazuma here.**
 
-So, you know how every single time you switch between RPs in SillyTavern, you spend like 10 minutes fiddling with your system prompt, toggles. just to download new card and start the process again.
-And let's be real General presets are so limited telling the ai a tag or a genre is not the same as building a full prompt Specifically for that RP. I got so unbelievably tired of that I built an entire extension to never deal with it again.
+So, you know how every single time you switch between RPs in SillyTavern, you spend like 10 minutes fiddling with your system prompt, toggles. just to download new card and start the process again. And let's be real General presets are so limited telling the ai a tag or a genre is not the same as building a full prompt Specifically for that RP. I got so unbelievably tired of that I built an entire extension to never deal with it again.
 
-Introducing **Megumin Suite** — the first SillyTavern preset that basically configures itself. You open a chat, click a button, pick some stuff from a pretty menu, and the Suite does the rest. Every character gets their own saved profile. Switch between your gritty dark fantasy campaign and your cozy slice-of-life RP? Boom. Already configured. Both of them. Separately. Without you touching a single prompt.
+Introducing Megumin Suite — the first SillyTavern preset that basically configures itself. You open a chat, click a button, pick some stuff from a pretty menu, and the Suite does the rest. Every character gets their own saved profile. Switch between your gritty dark fantasy campaign and your cozy slice-of-life RP? Boom. Already configured. Both of them. Separately. Without you touching a single prompt.
 
 Your time should go into the Story, not into menu hell. I did the boring nerd stuff so you don't have to. You're welcome btw.
 
 ---
 
-## Table of Contents
-
-- [What is "Megumin Secret Sauce v4"?](#what-is-megumin-secret-sauce-v4)
-- [Core Features](#core-features)
-- [Installation](#installation)
-- [How to Use It (Read This. Seriously.)](#how-to-use-it)
-  - [Stage 1: System Mode](#stage-1-system-mode)
-  - [Stage 2: Personality & Toggles](#stage-2-personality--toggles)
-  - [Stage 3: Writing Style (The Magic Step)](#stage-3-writing-style-the-magic-step)
-  - [Stage 4: Add-ons](#stage-4-add-ons)
-  - [Stage 5: Format Blocks](#stage-5-format-blocks)
-  - [Stage 6: AI Model](#stage-6-ai-model)
-- [Global Defaults vs Character Profiles](#global-defaults-vs-character-profiles)
-- [FAQ (Frequently Annoying Questions)](#faq)
-- [Credits](#credits)
+## 🚀 What's New in v4.1?
+*   **Mobile UI Overhaul:** Mobile users, your UI is fixed. No more cut-off menus at the bottom of your screen. The sidebar is now a sleek, horizontally scrollable top bar that perfectly fits your phone.
+*   **Developer Mode:** Added a purple "Dev" button that lets you view and edit the raw prompt blocks on a per-character basis.
+*   **Lorebook Integration:** The Megumin Engine now reads active Lorebooks! If your character relies heavily on lore instead of their main description, the "Generate Insights" button will now actually see it and generate accurate style tags.
+*   **Insight Bug Dead:** Fixed the issue where clicking "Generate Insights" would rudely reply *"give me character description"* instead of working.
+*   **Language-Based CoT:** Chain of Thought is no longer locked to specific model names. It is now categorized by Language (English, Arabic, Spanish, etc.), which completely fixes the Arabic thinking translation issue.
+*   **Thinking Hide Script:** Added a toggle in Regex to completely hide the AI's thinking process from your screen if you don't even want it in a collapsible box.
 
 ---
 
-## What is "Megumin Secret Sauce v4"?
+## 📥 Installation
 
-Okay let's talk about the AI "Yes Man" problem real quick because if you've used LLMs for RP for more than like 3 days you already know exactly what I'm talking about.
+1. Go to SillyTavern **Extensions** → **Install Extension** → Paste this repo URL.
+2. Download the two JSON files from this repo: `Megumin Suite V4.json` and `Megumin Engine.json`.
+https://github.com/Arif-salah/Megumin-Suite/tree/main/Presets
 
-LLMs are **massive simps** out of the box. Every NPC agrees with you. Every character thinks your plan is brilliant. Everyone falls in love with you after two messages. The whole world bends over backwards to make sure you're having a great time and honestly it gets *boring*.
+![Screenshot 1: The Files](./Screenshots/1.png)
 
-So you try to fix it. You write a prompt telling the AI to "stop being so agreeable" or "make NPCs more realistic." And what happens? The AI *overcompensates*. Suddenly every NPC is an edgy jerk who hates you for absolutely no reason. The shopkeeper insults you. Your party member betrays you on day one. A random child NPC threatens to stab you. Cool. Very realistic. Thanks.
+> ⚠️ **MOBILE USERS CRITICAL STEP:** If you download these on your phone and your browser renames them to `.json.txt`, you **must** use a file manager to rename them and delete the `.txt` part. Furthermore, make sure the Engine file is named EXACTLY `Megumin Engine.json` before you import it. The Suite file's name doesn't matter, but the Engine must be exact.
 
-**I didn't want a Yes Man. I didn't want an aggressive psychopath. I just wanted NPCs that have a spine.**
+3. Open SillyTavern, go to the **API Connections** tab (the plug/sliders icon).
+4. Click the **Import Preset** button (the little folder with an arrow) and upload BOTH files.
 
-Secret Sauce v4 (which is the **Balance** mode in the Suite) fixes this by forcing the AI to tie every NPC reaction directly to their background, their context, their personal agenda, and their relationship with you. Here's what that actually looks like in practice:
+![Screenshot 2: Import Button](./Screenshots/3.png)
 
-- You do something genuinely kind? The character appreciates it. Like a normal person.
-- You do something incredibly stupid? They look at you like you're an idiot. Like a normal person.
-- They have their own lives, their own problems, their own opinions.
-- They can disagree with you. They can argue with you. They can literally just walk away from you if they're fed up.
-- The world does **not** revolve around you anymore.
-- But it's not artificially harsh either. It's just... *real*.
+5. Once imported, open your preset dropdown and **make sure "Megumin Suite V4" is the active preset.** The extension handles the Engine silently in the background.
 
-That's the whole philosophy. Truth in human behavior. Not misery. Not comfort. Truth.
+![Screenshot 3: Active Preset](./Screenshots/4.png)
 
 ---
 
-## Core Features
+## 🪄 How to Use It (The Magic Wand)
 
-Here's what you're actually getting:
+Open any chat and look in the top right corner. See the magic wand? Click it.
 
-###  Per-Character Auto-Configuration
-Every character/RP you open gets its own saved profile. The Suite remembers what you picked for each one. Open a chat you haven't touched in weeks? Still configured exactly how you left it. You don't have to do anything, like the Great Todd Howard said "it just works". Revolutionary concept, I know.
+![Screenshot 7: Magic Wand](./Screenshots/6.png)
 
-###  AI-Generated Writing Rules
-This is the fun part. Pick some style tags (like "Gothic" + "Slow-Burn" + "Introspective"), click a button, and the Suite will use a secondary AI call to write you a complete, custom writing style prompt. You can also hit "Generate Insights" and it'll read your character card and brainstorm authors and tags that fit. It does the work for you basically.
-
-###  Auto-Summary (No Extra Extension Required)
-The Suite has a built-in summary system that works through Regex. No extra extensions needed. No manual input. It just... summarizes. At the end of each response. Automatically. Like it should've been doing this whole time.
-
-###  Info Block
-Clean status blocks at the end of each message showing date/time, location, weather, character outfits, positions. Keeps the AI From Forgetting its Wednesday.
-
-###  Improved Chain of Thought (COT)
-The Suite injects a structured thinking process that forces the AI custom thinking Process. It checks proportionality, subtext, dialogue realism, physical world state — all before generating a single word of the actual response. Supports Gemini, Claude, and GLM with model-specific formatting.
-
----
-
-## Installation
-
-1. Open SillyTavern
-2. Go to **Extensions** → **Install Extension**
-3. Paste the repo URL and install
-4. Load the two provided presets: **`Megumin Suite`** and **`Megumin Engine`** [View Presets](https://github.com/Arif-salah/Megumin-Suite-Ext/tree/main/Presets)
-5. For each preset, select your preferred API and **don't forget to save them, dummy**
-6. Open any chat
-7. Click the floating Megumin Suite button on your screen
-8. You're done. That's it. Go RP.
-
-> ⚠️ **Seriously** — load BOTH presets. The Suite preset is your main one. The Engine preset is what the Suite uses internally to generate writing rules and insights. (if you are using anything other than gemini toggle off "Enhance Definitions") If you skip the Engine preset, the AI generation features won't work and you'll come complain to me about it and I'll just link you back to this paragraph.
-
----
-
-## How to Use It
-
-Click the floating Megumin Suite button → a 6-stage wizard pops up. Pick your stuff. It autosaves as you go (yes rly, you don't even have to hit save, but there's a save button too if it makes you feel better).
-
-Whatever you configure here is automatically tied to the specific character you're currently chatting with. Different character = different profile. No cross-contamination.
-
----
+This opens the Workflow Builder. It autosaves per-character. A few important notes on using it:
 
 ### Stage 1: System Mode
-
-This is the core brain that drives how the entire RP behaves. You get three options:
-
-| Mode | What It Does | Vibe |
-|------|-------------|------|
-| **V4 Balance** ⭐ | The original Secret Sauce v4. Truth in human behavior. NPCs react proportionally to what you actually do. | "The real world but with magic" |
-| **V4 Cinematic** | Same foundation but the AI gets narrative authority to actively push the plot, introduce conflicts, and drive drama. Think Hollywood energy. | "The AI is the director now" |
-| **V4 Dark** | Balance but harsher. The AI is a strict reality simulator. No narrative protection. No dramatic safety net. Things happen because they would happen. | "You asked for this" |
-
-The ⭐ means recommended btw. You'll see those throughout the UI. Or you can ignore my recommendations. I'm not your mom.
-
----
+*   **V4 Balance ⭐** — Truth in human behavior. NPCs react proportionally. No simping, no needless hostility.
+*   **V4 Cinematic** — The AI is the director. It pushes the plot and introduces drama.
+*   **V4 Dark** — Balance but harsher. No narrative protection.
 
 ### Stage 2: Personality & Toggles
+*   Pick the **Engine (Recommended)** for pure mechanical precision, or the Director/Megumin if you want the system to have a personality.
+*   Toggle OOC commentary or User Control restrictions.
 
-**Persona:** Pick who the system "is."
+### Stage 3: Writing Style
+*   Select tags (Gothic, Slow-Burn, Purple Prose, etc.).
+*   Click **Generate Insights** to have the AI scan your character card (and lorebooks!) to suggest the perfect tags.
+*   Click **Generate Writing Rule** to compile them into a permanent prompt directive.
 
-- **Engine** ⭐ — Neutral. Just runs the world. No personality, no flavor, pure function. This is what you want 90% of the time.
-- **Director** — The system thinks of itself as "the Director." Same rules, slightly different framing.
-- **Megumin** — The system IS Megumin. Arrogant, condescending, and openly annoyed at Kazuma (that's you rn). Look I added this as a joke but some of you weirdos actually like it so it stays.
+### Stage 4: Add-ons & Language
+*   Toggle lethal combat, permanent death systems, and dialogue colors.
+*   **Language Output:** Type a language here if you want the AI to narrate the story in a specific language (Arabic, Spanish, French, etc.).
+*   **User Gender:** Force the AI to use your proper pronouns.
 
-**Extra Toggles:**
+### Stage 5: Format Blocks & Auto-Summary
+Pick what gets appended to the end of the AI's messages (Info block, Summary block, CYOA).
 
-- **OOC Commentary** — Lets the AI break the fourth wall and talk to you directly between `[]` brackets to comment on the story. Useful sometimes. Annoying other times.
-- **Stop the AI from Controlling User** — Prevents the AI from writing dialogue or actions for your character. **Keep this OFF for best results** unless the AI is being *really* grabby with your character. V4 already handles this pretty well on its own.
+> 💾 **How to Configure the Summary Block Depth:**
+> If you want to change how often the summary updates or how deep into the chat it reads:
+> 1. Go to the **Extensions** tab -> **Regex**.
+> 2. Find the `summary cleanup` script.
+> 3. Edit the **Min Depth** and **Max Depth** sliders.
+> 
+<p align="center">
+  <img src="./Screenshots/5.png" width="32%" />
+  <img src="./Screenshots/5.1.png" width="32%" />
+  <img src="./Screenshots/5.2.png" width="32%" />
+</p>
 
----
+### Stage 6: Chain of Thought (CoT) Language
+Select what language the AI uses *inside its hidden `<think>` tags*. 
 
-### Stage 3: Writing Style (The Magic Step)
-
-Ok this is where the Suite earns its keep so pay attention.
-
-**Step 1: Pick Tags**
-
-You'll see a grid of style tags organized into categories:
-
-- **Genre & Tone** — Dark, Gritty, Horror, Romantic, Comedy, Slice-of-Life, etc.
-- **Narration** — Purple Prose, Minimalist, Dialogue-Heavy, Show-Don't-Tell, etc.
-- **Pacing** — Slow-Burn, Fast-Paced, Episodic, Dynamic, etc.
-- **POV** — First-Person, Second-Person, Third-Person Limited/Omniscient
-
-Click the tags that match the vibe you want. Hover over them for hints if you're not sure what they mean (yes I wrote a tooltip for every single one, you're welcome).
-
-**Step 2: Generate Insights (Optional but Cool)**
-
-Feeling lazy? Same. Click **"Generate Insights"** and the Suite will read your character card and brainstorm author names and style tags that fit. It'll suggest stuff like "Edgar Allan Poe" or "Dark Fantasy Author" or whatever matches your character. You can then click those suggestions to add them to your selected tags.
-
-**Step 3: Custom Directives (Optional)**
-
-There's a text box where you can type any additional notes you want, like:
-- "Focus heavily on inner monologues"
-- "Keep dialogue snappy and sarcastic"
-- "More environmental description"
-- "Make the romance slow and painful" (I don't judge)
-
-**Step 4: Generate Writing Rule**
-
-Click **"Generate Writing Rule"** and the Suite fires off an AI call that takes ALL your selected tags + your custom notes and compiles them into a single, cohesive writing style prompt. This gets injected into your system prompt automatically. You can read it, edit it, or just trust the process. Up to you.
-
-> 💡 **Protip:** You can also just type/paste a writing rule directly into the Final Rule box if you already have one you like. The Suite won't judge you. *I* might though.
+> 🗣️ **The "Two Languages" Rule:**
+> Setting Stage 6 to Spanish *only* makes the AI think in Spanish. If you want the AI to actually narrate the story to you in Spanish, you **must** also set the Language Output in Stage 4!
 
 ---
 
-### Stage 4: Add-ons
+## 💻 Developer Mode & Custom Prompts
 
-Toggle on advanced mechanics. These are independent modules that stack on top of whatever mode you picked.
+### 1. The Dev Mode UI
+At the bottom of the Suite, there is a purple **Dev** button. Clicking this exposes the raw prompt code for the entire profile. 
 
-| Add-on | What It Does |
-|--------|-------------|
-| **Death System** | If something would realistically kill you, you die. No plot armor. After death, you get two choices: narrative survival (with consequences) or take over a different character. The death stays canon. *Yes really.* |
-| **Combat System** | Turn-by-turn combat that respects physics. Size, skill, numbers, and weapons matter. A regular human fighting a dragon will lose unless you have a *very* good plan. |
-| **Direct Language** | Makes the AI use direct anatomical terms instead of flowery euphemisms. You know what this is for. I'm not elaborating. |
-| **Dialogue Colors** ⭐ | Assigns each character a unique hex color for their dialogue so you can visually tell who's talking. Genuinely useful and looks pretty. Recommended. |
+![Screenshot 9: Dev Mode UI]([./Screenshots/8.png])
 
-**Extra Section:**
+*   You can rewrite any block of the prompt manually. 
+*   **You must click "Save Override"** to lock in your changes. The box will glow Gold and say "MODIFIED".
+*   If you mess up, click **"Restore Default"** to wipe your custom edit and pull the original pristine prompt back.
+*   **Saves Per Character:** If you do this while chatting with a character, it *only* applies to them. If you do this with no character selected (Modifying Global Default), every *new* character you talk to will inherit your custom code.
 
-At the bottom of this stage there's a bonus panel:
+### 2. Injecting Global "House Rules" (Add Your Custom Prompt Here)
+If you have global lore, formatting rules, or "House Rules" that you want injected into *every single chat* without having to mess with the UI or Dev Mode, I left a specific spot for you.
 
-- **Language Output** — Type a language (Arabic, Spanish, French, whatever) and the AI will write its entire response in that language. Leave empty for English. This was requested by a friend so here you go.
-- **User Gender** — Force the AI to use the correct pronouns for you. Select Male (He/Him) or Female (She/Her) so the AI stops misgendering you every other paragraph. **I especially got you, my female audience.** I know the AI defaults to "he" for everyone. Fixed.
-
----
-
-### Stage 5: Format Blocks
-
-Pick what gets appended to the end of the AI's messages:
-
-| Block | What It Generates |
-|-------|------------------|
-| **Info Block** ⭐ | A clean collapsible status panel: date/time, location, weather, character outfits and positions. Keeps everything Saved. |
-| **Summary Block** ⭐ | A rolling collapsible summary of what just happened (max 100 words, no interpretation). Helps the AI remember things without you installing a separate memory extension. |
-| **CYOA Block** | A "Choose Your Own Adventure" panel with 4 suggested actions you can take. Nice if you're stuck or just want options laid out for you. |
-
-Both Info Block and Summary Block are recommended. The CYOA one is totally optional — some people love it, some people like me find it annoying. Try it and see.
+1. Go to the SillyTavern **API Connections** tab.
+2. Select the **Megumin Suite V4** preset.
+3. Scroll down through the prompt blocks until you see the toggle: 
+   `<!-- Add Your Customer prompt here -->`
+4. Paste your rules directly below that line. They will safely inject into every RP without breaking the Suite's formatting.
 
 ---
 
-### Stage 6: AI Model
+## ⚠️ FAQ & Troubleshooting
 
-Just tell the Suite what LLM you're currently using so it formats the Chain of Thought correctly:
+**Q: I'm getting a "Chat Completion API Error" / Provider Returned Error.**
+I test exclusively on Official APIs. Some models (like Gemini) need "Prefill" enabled. Some models (like Claude) **hate it** and will throw an error if you leave it on. If you are using local OpenAI-compatible APIs (like Ollama), disabling Prefill is usually required. Look for the Prefill toggle in your preset settings and flip it!
+![Screenshot 8: Prefill Toggle](./Screenshots/7.png)
 
-| Option | When to Use |
-|--------|------------|
-| **Gemini** | You're using Google Gemini |
-| **Gemini-ara** ⭐ | Gemini but the thinking process is in Arabic. It is better because it Separate thinking process from narration process. Sounds weird but it actually works better for some reason. Don't ask me why. |
-| **Claude** | You're using Anthropic Claude |
-| **GLM** | You're using GLM |
-
-Pick the one that matches your API. If you pick the wrong one it won't explode or anything but the COT formatting might look weird to the model.
-for any Model Except Gemini Disable "Enable only for Gemini" in the preset Toggles
-
----
-
-## Global Defaults vs Character Profiles
-
-Here's how the profile system works (it's simple I promise):
-
-1. **If you open the Suite WITHOUT a character selected** → you're editing the **Global Default**. Any new character you start chatting with will automatically inherit whatever you set here.
-
-2. **If you open the Suite WITH a character selected** → you're editing **that specific character's profile**. Changes only apply to them.
-
-3. **If a character doesn't have a custom profile yet** → it uses the Global Default until you change something for them.
-
-The header of the Suite tells you what you're editing rn:
-- 🟢 Green = Custom character profile loaded
-- 🟡 Yellow = Using system default (no custom profile yet)
-- 🟣 Purple = Editing the global default
-
-There's also a **Reset** button if you completely brick a profile and want to start over. It'll ask you to confirm first because I'm not a monster.
-
----
-
-## FAQ
-
-**Q: Do I need both presets?**
-Yes. Read the installation section again. I literally warned you about this.
-
-**Q: Can I edit the generated writing rule after it's made?**
-Yep. It's just a text box. Edit it however you want. The Suite doesn't care.
+**Q: Global Defaults vs Character Profiles?**
+If you open the Suite WITHOUT a character selected, you're editing the **Global Default**. Any new character you start chatting with inherits this. If you open the Suite WITH a character selected, you're editing **that specific character's profile**. 
 
 **Q: Does this work with group chats?**
-It's designed for 1-on-1 character/RP chats rn. Group chat support might come later if enough people yell at me about it.
-
-**Q: The AI is still being a simp even with Balance mode.**
-Make sure you actually saved and closed the Suite, and make sure the **Megumin Suite** preset is the active one. If the preset isn't selected, the injection doesn't run. Also some models are just... like that. Gemini 2.5 and Claude respond to V4 the best in my experience.
-
-**Q: I clicked Generate Writing Rule and nothing happened.**
-You need tags selected first. Go back to Stage 3, pick some tags, then click the button. Also make sure the **Megumin Engine** preset is imported in your preset list (you don't need to select it — the Suite switches to it automatically in the background).
-
-**Q: Why is it called Megumin Suite?**
-Because Megumin is the best girl and I will not be taking questions on this. Next.
-
-**Q: Does this work with [insert Model here]?**
-The Suite itself doesn't care what API you're running — it just injects text into your prompt pipeline, so as long as SillyTavern talks to it, the Suite rides along. However, the Chain of Thought stuff in Stage 6 is specifically built for Gemini, Claude, and GLM. If you're using something else, everything will still work, you just won't get the fancy structured thinking process. Pick whichever one is closest to your model and pray, I guess.
-
-**Q: I found a bug.**
-Cool. Open an issue and describe what happened, what you expected to happen, and what model/API you're using. Screenshots help. "It's broken" with zero context does not help. Please don't be that person.
+It is heavily optimized for 1-on-1 RP right now. Group chat support is planned for the future.
 
 ---
 
-## Credits
-
-- **Kazuma** (me, hi) — Built the whole thing. The extension, the prompts, the UI, the presets, this README, all of it. I need to go outside.
-- **Megumin** — Moral support (unwilling). Also the mascot. Also the reason the floating button exists.
-- **SillyTavern** — For being the platform that makes all of this possible.
-- **You** — For actually reading this far. Genuinely impressed ngl. Most people stop after the installation section. Gold star for you. ⭐
-
----
+**Need more help?**
+Drop into my Discord server: https://discord.gg/wynRvhYx
 
 *Now go RP. Stop reading READMEs. Shoo.*

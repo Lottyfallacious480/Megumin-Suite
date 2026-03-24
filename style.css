@@ -203,30 +203,31 @@ select.ps-modern-input {
     .ps-modern-modal {
         flex-direction: column;
         width: 100vw;
-        height: 100vh;
-        max-height: 100vh;
+        height: 100dvh; /* 100dvh completely fixes the bottom cut-off on mobile browsers */
+        max-height: 100dvh;
         border-radius: 0;
         border: none;
+        position: relative; /* Acts as the anchor for the absolute status pill */
+        overflow: hidden; 
     }
 
-    /* Top Bar: Icon and PFP only */
+    /* Transform Sidebar into a sleek top navigation */
     .ps-sidebar {
         width: 100%;
         height: auto;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between; /* Pushes Icon left, PFP right */
-        padding: 10px 15px;
+        flex-direction: column;
         border-right: none;
         border-bottom: 1px solid var(--border-color);
         background: var(--bg-panel);
+        z-index: 10;
     }
 
+    /* Limit title width to make room for the status pill in the top right */
     .ps-sidebar-header {
-        padding: 0;
+        padding: 12px 15px;
         margin-bottom: 0;
         border-bottom: none;
-        gap: 10px;
+        max-width: 65%;
     }
 
     .ps-sidebar-icon {
@@ -235,92 +236,109 @@ select.ps-modern-input {
         border-radius: 6px;
     }
 
-    .ps-sidebar-title h2 { font-size: 0.9rem; }
-    .ps-sidebar-title p { display: none; }
+    .ps-sidebar-title h2 { font-size: 0.95rem; }
+    .ps-sidebar-title p { display: block; font-size: 0.65rem; }
 
-    .ps-modern-dots {
-        display: none !important;
-    }
-
-    .ps-sidebar-footer {
-        margin-top: 0;
-        padding: 0;
-        border-top: none;
-    }
-
-    .ps-character-image-container {
-        width: 34px;
-        height: 34px;
-        border-radius: 50%;
-        border: 1.5px solid var(--border-color);
-    }
-
-    .ps-character-label {
-        display: none;
-    }
-
-    /* Main Header Area */
-    .ps-main-header {
-        padding: 15px 20px;
-        flex-direction: column; /* Stack Step Count and Status Text */
-        gap: 5px;
-    }
-
-    .ps-header-left {
-        width: 100%;
-    }
-
-    /* Relocate Status Text below the Breadcrumbs */
+    /* THIS FIXES ISSUE #2: Move Status Pill to the Top Right Corner */
     .ps-status-pill {
-        position: static !important; 
-        justify-content: flex-start !important;
-        margin-top: 2px;
+        position: absolute !important;
+        top: 15px;
+        right: 15px;
+        justify-content: flex-end !important;
+        margin: 0;
+        z-index: 20;
+        max-width: 35%;
+        text-align: right;
     }
 
     .ps-status-glow {
-        font-size: 0.65rem; /* Slightly smaller for mobile */
+        font-size: 0.55rem;
+        line-height: 1.2;
+        display: block;
     }
+
+    /* Make the steps a horizontal scrollable bar */
+    .ps-modern-dots {
+        display: flex !important;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 0 15px 10px 15px;
+        gap: 8px;
+    }
+    
+    .ps-modern-dots::-webkit-scrollbar { display: none; }
+    
+    .ps-dot {
+        flex-shrink: 0; 
+        padding: 6px 10px;
+    }
+
+    /* Hide large images on mobile */
+    .ps-sidebar-footer { display: none; }
+
+    /* THIS FIXES ISSUE #1: Let the header scroll AWAY so it doesn't take up space */
+    .ps-wizard-area {
+        flex: 1;
+        display: block; /* Removing flexbox here makes the header scroll naturally with the body! */
+        overflow-y: auto;
+        padding-bottom: 120px; /* Leaves room for the footer to not cover the bottom cards */
+    }
+
+    /* Clean up the header to look good while scrolling */
+    .ps-main-header {
+        padding: 15px 20px 5px 20px;
+        display: block; 
+    }
+
+    /* Hide the repetitive "STEP 1 OF 6" since the dots above already show it */
+    .ps-breadcrumbs { display: none !important; } 
 
     .ps-stage-header {
         font-size: 1.3rem;
-        margin-top: 5px;
+        margin: 0 0 5px 0 !important;
     }
 
+    .ps-stage-sub {
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+    }
+
+    /* Adjust main body so it flows properly */
     .ps-main-body {
+        overflow-y: visible; /* Disabled internal scroll so the whole page scrolls together */
         padding: 0 20px 20px 20px;
     }
 
-    /* Grids and Cards */
     .ps-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* 1 column for mobile cards */
     }
 
-    /* Footer Fixes */
+    /* THIS FIXES THE CUT OFF: Pin the footer to the absolute bottom */
     .ps-footer {
-        padding: 15px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 12px 15px;
         flex-direction: column;
         gap: 10px;
+        background: var(--bg-panel);
+        border-top: 1px solid var(--border-color);
+        z-index: 50;
+        box-shadow: 0 -4px 15px rgba(0,0,0,0.5);
+        /* env safe-area prevents iPhones from putting the home-bar over your buttons */
+        padding-bottom: calc(12px + env(safe-area-inset-bottom)); 
     }
 
-    .ps-footer-left {
+    .ps-footer > div {
         width: 100%;
-        justify-content: center;
-    }
-
-    .ps-footer-right {
-        width: 100%;
-        margin-left: 0 !important;
         justify-content: space-between;
-        gap: 8px;
+        margin: 0 !important;
     }
 
     .ps-modern-btn {
-        flex: 1;
+        flex: 1; 
         padding: 12px 5px;
-        font-size: 0.75rem;
-    }
-
-    .ps-modern-input {
-        font-size: 16px !important;
+        font-size: 0.8rem;
     }
 }
