@@ -1,6 +1,6 @@
 
 
-# 💥 Megumin Suite v4.1 - The "Dev Mode" Update
+# 💥 Megumin Suite v4.1 - Dev Mode And Bug fixes
 
 ---
 
