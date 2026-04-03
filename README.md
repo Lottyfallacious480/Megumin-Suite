@@ -165,7 +165,7 @@ For the best experience, use models with strong instruction-following and reason
 * **Thinking Block Won't Close:** If `<think>` tags bleed into the chat, enable the **Think Bug Toggle** in your settings.
 * **Generation Hanging / Formatting Issues:** Try **disabling "Prefill"** in your SillyTavern API settings.
 * **Does this extension mess with my other presets?** No — your other presets will work just fine. Megumin Suite only injects its rules into its own designated preset (`Megumin Suite`). Your existing presets remain completely untouched.
-* **Old Versions:** Legacy docs are here: [Megumin Suite Legacy Readme](https://github.com/Arif-salah/Megumin-Suite)
+* **Old Versions:** Legacy docs are here: [Megumin Suite Legacy Readme](https://github.com/Arif-salah/Megumin-Suite/tree/V4.1)
 
 ---
 * [Ko-fi (Buy me a coffee)](https://ko-fi.com/kasumaoniisan)
